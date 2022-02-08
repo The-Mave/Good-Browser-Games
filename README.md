@@ -1,21 +1,11 @@
-PRÁTICA PROFISSIONAL EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS 05J
-
-Esse repositório tem como intuito facilitar o compartilhamento de arquivos entre os colaboradores do projeto /Good-Browser-Games proposto pelo professor TOMAZ MIKIO SASAKI da matéria PRÁTICA PROFISSIONAL EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS da UPM (Universidade Presbiteriana Mackenzie)
-
-A documentação do projeto encontra-se na pasta /doc
-
-Todo o conteúdo presente nesse repositório é para fins educacionais.
-
+# PRÁTICA PROFISSIONAL EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS 05J
+## Documentação do projeto Good-Browser-Games
 ---
-title: "Especificação do Sistema Web de Vendas Solar System"
-author: "Prática Profissional em ADS"
----
-
 
 **Índice**
 
 - [1. Introdução](#1-introdução)
-- [2. Informações sobre a empresa](#2-informações-sobre-a-empresa)
+- [2. Informações sobre o projeto](#2-informações-sobre-a-empresa)
 - [3. Escopo do projeto](#3-escopo-do-projeto)
 - [4. Interessados](#4-interessados)
 - [5. Objetivos funcionais](#5-objetivos-funcionais)
@@ -29,28 +19,19 @@ author: "Prática Profissional em ADS"
 - [9. Wireframes](#9-wireframes)
 - [10. Diagrama de classes de domínio](#10-diagrama-de-classes-de-domínio)
 
-
-
-> Observação do professor: Este documento é um exemplo de parte de uma especificação de software. Não está com todos os detalhes necessários para iniciar o desenvolvimento de um software, mas serve de template para que cada grupo inicie a redação do documento do seu projeto.
-
-> É uma adaptação, mas não uma tradução exata, de um [exemplo disponível na Universidade de Ohio](http://web.cse.ohio-state.edu/~bair.41/616/Project/Example_Document/Req_Doc_Example.html).
-
-
+---
 # 1. Introdução
 
-Este é um documento de especificação de requisitos para um novo sistema web de avaliação de jogos. 
+Este é um documento de especificação de requisitos para um novo aplicativo web de avaliação de jogos. 
 
 O sistema deverá permitir que usuários e administradores naveguem pelo catálogo de jogos cadastrados, em que usuários poderão realizar avaliações de jogos, visualizar outras avaliações e classificá-las como úteis ou não. O administrador poderá cadastrar, criar categorias de jogos e alterar seus nomes, se necessário.
 
 Este documento descreve os requisitos não-funcionais, modela os requisitos funcionais com casos de uso e modela os conceitos do domínio do problema.
 
 
+# 2. Informações sobre o projeto
 
-# 2. Informações sobre a empresa
-
-A Empresa Solar Systems vende equipamentos para a geração de energia de formas alternativas e identificou tendências que causarão um aumento significativo na demanda por seus produtos.
-
-Devido à natureza técnica e inovadora de seus produtos, a empresa possui vendedores capazes de orientar os clientes no processo de escolher um sistema de energia alternativa. A empresa possui também funcionários que têm a função de gerente do produto. O gerente do produto é um especialista em um determinado produto ou em uma determinada linha de produtos. Ele produz os *whitepapers*, documentos altamente técnicos e focados nas especificações dos produtos.
+O Projeto Good Browser Games foi proposto como tema de desenvolvimento para a aula de Pratica Profissional em Analise e Desenvolvimento de Sistemas, o foco principal do projeto é a criação de um Web App de avaliações de jogos de navegador que funcionára como uma comunidade, onde o usuário pode consultar avaliações feitas por outros e determinar se as mesmas foram úteis ou não, dessa forma as avaliações terão mais integridade, além disso, o membro poderá criar suas próprias avaliações sobre jogos, podendo avaliar de 1 a 5 estrelas e deixar seu feedback. A plataforma contará com um sistema de recomendação por algoritmo, que, com base em suas avaliações e buscas recentes, he trará sugestões de jogos similares ou que encaixem com seu perfil.
 
 
 # 3. Escopo do projeto
