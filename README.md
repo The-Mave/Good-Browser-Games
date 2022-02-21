@@ -190,7 +190,7 @@ cLICANDO NO JOGO
 [](https://cdn.discordapp.com/attachments/943302835418824736/943303186175918090/unknown.png)
 [](https://cdn.discordapp.com/attachments/943302835418824736/943303222922215524/unknown.png)
 [](https://cdn.discordapp.com/attachments/943302835418824736/943303299011084298/unknown.png)
-[](https://cdn.discordapp.com/attachments/943302835418824736/943303357869740039/unknown.png)
+[https://cdn.discordapp.com/attachments/943302835418824736/943303357869740039/unknown.png]()
 > (em elaboração)
 
 
