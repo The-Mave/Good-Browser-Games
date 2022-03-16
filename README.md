@@ -1,6 +1,6 @@
 # COMO USAR O GIT NO VISUAL STUDIO CODE
 
-Neste exemplo vou explicar como utilizar o VSCode com a extensão Git
+Neste exemplo vou explicar como utilizar o VSCode com a extensão Git.
 
 ---
 
