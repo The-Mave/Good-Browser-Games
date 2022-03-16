@@ -1,193 +1,66 @@
-# PRÁTICA PROFISSIONAL EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS 05J
-## Documentação do projeto Good-Browser-Games
----
+# COMO USAR O GIT NO VISUAL STUDIO CODE
 
-**Índice**
-
-- [1. Introdução](#1-introdução)
-- [2. Informações sobre o projeto](#2-informações-sobre-a-empresa)
-- [3. Escopo do projeto](#3-escopo-do-projeto)
-- [4. Interessados](#4-interessados)
-- [5. Objetivos funcionais](#5-objetivos-funcionais)
-- [6. Objetivos não-funcionais](#6-objetivos-não-funcionais)
-- [7. COTS (Commercial Off-The-Shelf)](#7-cots-commercial-off-the-shelf)
-- [8. Casos de uso](#8-casos-de-uso)
-  - [8.1. Acessar funções restritas](#81-acessar-funções-restritas)
-  - [8.2. Efetuar registro](#82-efetuar-registro)
-  - [8.3. Efetuar seu próprio pedido](#83-efetuar-seu-próprio-pedido)
-  - [8.4. Efetuar pedido para o cliente](#84-efetuar-pedido-para-o-cliente)
-- [9. Wireframes](#9-wireframes)
-- [10. Diagrama de classes de domínio](#10-diagrama-de-classes-de-domínio)
+Neste exemplo vou explicar como utilizar o VSCode com a extensão Git
 
 ---
-# 1. Introdução
 
-Este é um documento de especificação de requisitos para um novo aplicativo web de avaliação de jogos. 
+## Links
+Visual Studio Code - https://code.visualstudio.com/
+Git Extension for Visual Studio Code - https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github
 
-O sistema deverá permitir que usuários e administradores naveguem pelo catálogo de jogos cadastrados, em que usuários poderão realizar avaliações de jogos, visualizar outras avaliações e classificá-las como úteis ou não. O administrador poderá cadastrar, criar categorias de jogos e alterar seus nomes, se necessário.
+Após a instalação do VSCode e da Extensão, note que um novo botão apareceu em seu menu lateral. Esse é o botão para modificar branches (Uma Ramificação, em controle de versão e gerenciamento de configuração de software)
+![image](https://user-images.githubusercontent.com/78883240/158706074-5bca1e22-bba9-4ff0-938c-9c9a98bda3a3.png)
 
-Este documento descreve os requisitos não-funcionais, modela os requisitos funcionais com casos de uso e modela os conceitos do domínio do problema.
+## Como controlar o repositório pela extensão:
+---
+### Clonando o Repositório: 
 
+Caso já tenha feito isso, pule para Pull & Push
 
-# 2. Informações sobre o projeto
+1. Clique no menu de ramificação (Branch) 
+![image](https://user-images.githubusercontent.com/78883240/158706401-06e534b4-f1db-4a85-902a-5f2db1b1f870.png)
 
-O Projeto Good Browser Games foi proposto como tema de desenvolvimento para a aula de Pratica Profissional em Analise e Desenvolvimento de Sistemas, o foco principal do projeto é a criação de um Web App de avaliações de jogos de navegador que funcionára como uma comunidade, onde o usuário pode consultar avaliações feitas por outros e determinar se as mesmas foram úteis ou não, dessa forma as avaliações terão mais integridade, além disso, o membro poderá criar suas próprias avaliações sobre jogos, podendo avaliar de 1 a 5 estrelas e deixar seu feedback. A plataforma contará com um sistema de recomendação por algoritmo, que, com base em suas avaliações e buscas recentes, he trará sugestões de jogos similares ou que encaixem com seu perfil.
+2. Em seguida, clone o repositório. Clicando em "Open Folder Clone Repository" (Caso não possua essa parte pule para o proximo.)
+![image](https://user-images.githubusercontent.com/78883240/158706457-f45b7f66-a96d-4f8a-b177-b937ba21748d.png)
 
+3. Clique em Initialize Repository
+![image](https://user-images.githubusercontent.com/78883240/158706676-6bd2206e-dfe0-45d7-8e33-189235436cce.png)
 
-# 3. Escopo do projeto
+4. Clique no Três pontinhos, e entçao em Clone
+![image](https://user-images.githubusercontent.com/78883240/158706811-6d339b10-aaf3-42e8-ad05-f1ac3b7f086b.png)
 
-O escopo deste projeto é um sistema web que permite que seus usuários naveguem pelo catálogo de jogos cadastrados e os avaliem.
+5. Insira a URL do projeto (https://github.com/The-Mave/Good-Browser-Games.git)
+![image](https://user-images.githubusercontent.com/78883240/158706849-0b7c0794-ae0b-4d42-81ce-28070947ab6d.png)
 
-A engine de pesquisa web será adquirida como um componente pronto para o novo sistema. Os detalhes internos desta engine não fazem parte deste projeto. Questões de segurança do site, além da proteção por senha no próprio site, também não são parte do projeto.
+6. Selecione a pasta onde o Projeto será armazenado
+![image](https://user-images.githubusercontent.com/78883240/158706985-b45031c0-9980-402f-8905-b6694208dc00.png)
+E então clique em:
+![image](https://user-images.githubusercontent.com/78883240/158707038-50a48cd0-a8b7-4c7d-85d6-95b1861f673c.png)
+Caso aparece uma caixa para abrir o diretorio do clone, clique em Open
+![image](https://user-images.githubusercontent.com/78883240/158707329-263c64d4-6f0b-4002-8b1e-f3f037f52f56.png)
 
-> Observação do professor: neste exemplo, deixei como parte do projeto somente a proteção por senha, assumindo que as demais questões de segurança serão tratadas pela equipe de operações. No caso do projeto do seu grupo, será necessário tratar destes outros aspectos de segurança.
+7. Caso apareça isso Selecione, Yes, I Trust:
+![image](https://user-images.githubusercontent.com/78883240/158707190-ee3bcc8c-7d40-4d80-9329-a614877d2d2c.png)
 
+8. Pronto, o projeto foi clonado.
+![image](https://user-images.githubusercontent.com/78883240/158707385-946dea8a-8019-420f-8c74-4af57eb3f1ff.png)
 
-# 4. Interessados
+---
+1. Para começarmos a subir o versionamento é importante saber duas coisas. 
+    A. ANTES DE COMEÇAR QUALQUER MODIFICAÇÃO, SEMPRE DE PULL PARA PEGAR A ULTIMA VERSÃO DO PROJETO.
+    B. SEMPRE CRIE UMA BRANCH (RAMIFICAÇÃO) PARA CADA FEATURE QUE FOR IMPLEMENTAR
+2.  Dando o primeiro Pull, no menu de ramificação:
+![image](https://user-images.githubusercontent.com/78883240/158707711-a4cfefbf-9763-4e1c-a8d4-5813a13877c7.png)
+Clique nos três pontinhos
+![image](https://user-images.githubusercontent.com/78883240/158707734-6f7f52ba-b5b2-4f79-b689-b21456d948e3.png)
+Pull & Push > Pull from, para selecionarmos de qual ramificação queremos sincronizar o nosso projeto (o ideal é sempre sincronizar com a main/master) 
+![image](https://user-images.githubusercontent.com/78883240/158707754-ee738504-6c46-4172-aeb1-2227f4ff7b1f.png)
 
-Aqueles que irão se beneficiar diretamente e aqueles que serão afetados pelo novo sistema:
+3.  
+4. 
 
-* Usuários: Conseguirão navegar pelo site para buscar e avaliar jogos. Poderão visualizar avaliações de outros usuários e classificá-las como úteis ou não.
 
-* Administradores: Conseguirão navegar pelo site e cadastrar jogos e categorias, além de alterar o nome e gerar relatórios sobre os jogos.
 
 
-# 5. Objetivos funcionais
 
-1. O sistema deverá permitir que usuários busquem e avaliem jogos.  
-   
-   Para os usuários, isso será útil para observar jogos que são realmente engajados e interessantes.
-
-   Isto poderá facilitar a elaboração de relatórios de jogos para o administrador, visto que ele terá dados de satisfação ou não do público.
-
-2. O sistema deverá permitir que os administradores cadastrem e criem catálogos de jogos.  
-   
-   Isto resultará em um sistema mais organizado, tornando a navegação mais fácil e rápida.
-
-3. O sistema deverá permitir que os usuários visualizem outras avaliações e as classifiquem como úteis ou não.
-
-   Isto reduzirá o tempo para um usuário de buscar jogos mais interessantes, visto que isso será filtrado de acordo com o nível de satisfação.
-
-4. O sistema deverá permitir que sejam realizadas pesquisas em todo o texto das páginas web a que o usuário tem acesso. O sistema deverá permitir as seguintes pesquisas:
-   * pesquisar todas as palavras
-   * pesquisar qualquer uma das palavras
-   * pesquisar a frase exata
-
-5. O sistema deverá permitir que os *whitepapers* sejam acessados nas páginas dos próprios produtos.
-
-   Isto permitirá que os usuários encontrem sozinhos as informações, reduzindo o custo de suporte ao cliente.
-
-6.  O sistema deverá permitir que o status do usuário seja armazenado para a próxima vez que ele retornar à aplicação web.
-    
-    Isto reduzirá o tempo de visita do usuário, pois ele não precisará fornecer novamente dados que ele já entrou em uma visita anterior.
-
-7. O sistema deverá fornecer ao administrador as informações de navegação do usuário.
-
-   Esta informação permitirá que o administrador determine qual informação disparou a busca do jogo e ajudará a abordar usuários em potencial de forma mais efetiva, através de recomendações.
-
-
-
-# 6. Objetivos não-funcionais
-
-a. O sistema deverá estar completamente operacional pelo menos 99.99% do tempo.
-
-b. O tempo fora do ar após uma falha não deverá exceder 0.5 hora.
-
-c. O administrador deverá ser capaz de utilizar o sistema em seu trabalho após um treinamento de 2 dias.
-
-d. Um usuário que já sabe qual jogo lhe interessa deve ser capaz de localizar e ver a página do jogo em 20 segundos.
-
-e. O número de páginas web pelas quais o usuário precisa navegar para acessar a informação do produto a partir da página principal não deve ser maior do que 2.
-
-f. O sistema deverá ser capaz de suportar 1000 usuários simultâneos.
-
-g. O tempo médio para visualizar uma página web em uma conexão de 1Mbps não deverá exceder 5 segundos.
-
-h. O tempo médio para baixar e visualizar um *whitepaper* em uma conexão de 1Mbps não deverá exceder 10 segundos.
-
-i. O sistema deverá oferecer acesso protegido por senha para páginas web que são acessadas somente por administradores.
-
-j. Os dados de transação devem ser transmitidos de forma criptografada.
-
-k. O sistema deverá ser capaz de acomodar novos produtos e novas linhas de produto sem necessidade de alterações na sua implementação.
-
-l. O site web do sistema deverá ser visível nos navegadores Mozilla Firefox (versão $\ge$ 75.0.0), Google Chrome (versão $\ge$ 81.0.0) e Microsoft Edge (versão $\ge$ 5.0.0).
-
-m. O sistema deverá disponibilizar uma página web que explica como navegar pelo site. A página deverá ser customizada com base nas páginas que o usuário pode acessar. Esta página de ajuda deverá ser acessível a partir de todas as outras páginas.
-
-o. O sistema deverá ter interface com
-
-* Uma base de dados relacional para informações dos jogos e suas avaliações.
-* A engine de pesquisa (a ser adquirida).
-
-
-# 7. COTS (Commercial Off-The-Shelf)
-
-Os softwares que serão adquiridos para compor o sistema são:
-
-* Tradutor do português para o inglês e do português para o espanhol.
-
-* Engine de pesquisa.
-
-
-# 8. Casos de uso
-
-A figura a seguir apresenta o diagrama de casos de uso:
-
-![Diagrama de casos de uso](diagramas/casos-de-uso.png)
-
-
-## 8.1. Acessar funções restritas
-
-**Nome do caso de uso:** Acessar funções restritas
-
-**Resumo:** Para ganhar acesso a informações restritas ou personalizadas, fazer pedidos ou outras transações especializadas, um usuário precisa se autenticar e o sistema determinará seu nível de acesso.
-
-**Pré-condições:**
-* O usuário já se registrou.
-
-**Pós-condições:**
-* O usuário pode obter informações e realizar funções disponíveis para o seu nível de acesso.
-
-**Fluxo principal:** 
-
-1. O usuário seleciona a operação para efetuar o login.
-2. O sistema solicita o seu *username* e a sua senha.
-3. O usuário entra seu *username*  e sua senha.
-4. O sistema verifica que o *username* e a senha correspondem às informações de um de seus usuários registrados.
-5. O sistema inicia uma sessão e apresenta uma mensagem de boas-vindas baseada nas preferências do usuário.
-
-
-**Fluxos alternativos:**
-
-Passo 4:
-* Se o *username* é invalido, o caso de uso retorna para o passo 2.
-
-Passo 4:
-* Se o *username* é válido e a senha é inválida, o sistema dá uma nova oportunidade para o usuário entrar a senha. Quando o usuário entra outra senha, o caso de uso continua com o passo 4, utilizando o *username* já informado e a nova senha.
-
-
-## 8.2. Efetuar registro
-
-> (em elaboração)
-
-
-## 8.3. Efetuar seu próprio pedido
-
-> (em elaboração)
-
-## 8.4. Efetuar pedido para o cliente
-
-> (em elaboração)
-
-
-# 9. Wireframes
-Tela Inicial do Aplicativo:
-
-
-> (em elaboração)
-
-
-# 10. Diagrama de classes de domínio
-
-> (em elaboração)
+Primeiramente você precisa fazer o clone do projeto:
