@@ -13,38 +13,38 @@ Após a instalação do VSCode e da Extensão, note que um novo botão apareceu 
 
 ## Como controlar o repositório pela extensão:
 ---
-### Clonando o Repositório: 
+### Etapa 1: Clonando o Repositório: 
 
-Caso já tenha feito isso, pule para Pull & Push
+Caso já tenha feito isso, pule para Localizando a pasta no VSCODE
 
-1. Clique no menu de ramificação (Branch) 
-![image](https://user-images.githubusercontent.com/78883240/158706401-06e534b4-f1db-4a85-902a-5f2db1b1f870.png)
+1. Crie um diretório(pasta) em qualquer lugar de seu computador para clonarmos o projeto nela.
+2. Ao criar a pasta, usando o explorador de arquivos do windows clique na barra de caminho do diretório e cole:
+git clone https://github.com/The-Mave/Good-Browser-Games.git
+3. A pasta será clonada. 
+4. Após isso basta abrir o VSCode.
 
-2. Em seguida, clone o repositório. Clicando em "Open Folder Clone Repository" (Caso não possua essa parte pule para o proximo.)
-![image](https://user-images.githubusercontent.com/78883240/158706457-f45b7f66-a96d-4f8a-b177-b937ba21748d.png)
+### Etapa 2: Localizando a pasta no VSCode
+1. CLique em File > Open Folder
+2. Selecione o mesmo diretório onde o projeto foi clonado na Primeira Etapa.
+3. Pronto você está na pasta do projeto.
 
-3. Clique em Initialize Repository
-![image](https://user-images.githubusercontent.com/78883240/158706676-6bd2206e-dfe0-45d7-8e33-189235436cce.png)
+### Etapa 3: Instalando o Git Extension for Visual Studio Code
+1. Após instalar o Git Extension for Visual Studio Code você precisa sincronizar ele com sua conta do GitHub (para utilizar melhor suas funções)
+2. Clique no ícone do GitHub na barra lateal (O ícone de gatinho)
+3. Faça o procedimento que ele te indica de efetuar login pelo navegador e autorizar o uso do mesmo no VSCode
+4. Após fazer isso você estára logado.
 
-4. Clique no Três pontinhos, e entçao em Clone
-![image](https://user-images.githubusercontent.com/78883240/158706811-6d339b10-aaf3-42e8-ad05-f1ac3b7f086b.png)
+### Etapa 4: Fazendo Pull no Projeto
+1. Fazer o Pull é basicamente sincronizar o projeto que está no Github com o da sua maquina, no sentido de "baixar" os arquivos novos. É importante fazer isso sempre que for fazer alguma alteração, para que seu repositório não esteja desatualizado.
+2. Para "baixar" a ultima versão do projeto, clique em "Source Control" a ferramenta que fica logo abaixo da busca.
 
-5. Insira a URL do projeto (https://github.com/The-Mave/Good-Browser-Games.git)
-![image](https://user-images.githubusercontent.com/78883240/158706849-0b7c0794-ae0b-4d42-81ce-28070947ab6d.png)
 
-6. Selecione a pasta onde o Projeto será armazenado
-![image](https://user-images.githubusercontent.com/78883240/158706985-b45031c0-9980-402f-8905-b6694208dc00.png)
-E então clique em:
-![image](https://user-images.githubusercontent.com/78883240/158707038-50a48cd0-a8b7-4c7d-85d6-95b1861f673c.png)
-Caso aparece uma caixa para abrir o diretorio do clone, clique em Open
-![image](https://user-images.githubusercontent.com/78883240/158707329-263c64d4-6f0b-4002-8b1e-f3f037f52f56.png)
+![image](https://user-images.githubusercontent.com/78883240/158711642-091c6185-d38a-4a7d-841a-cd3a2e4fd665.png)
 
-7. Caso apareça isso Selecione, Yes, I Trust:
-![image](https://user-images.githubusercontent.com/78883240/158707190-ee3bcc8c-7d40-4d80-9329-a614877d2d2c.png)
 
-8. Pronto, o projeto foi clonado.
-![image](https://user-images.githubusercontent.com/78883240/158707385-946dea8a-8019-420f-8c74-4af57eb3f1ff.png)
-
+3. Depois disso, clique nos três pontihos no superior direito do menu do SourceControl clique em Pull, Push > Pull from ... 
+4. E insira o nome da Remote que quer atualizar com seu projeto local, geralmente optamos sempre pela origin pois é a raiz de nosso projeto e é onde fica tudo que está em produção, podem existir outras remotes como, develop ou teste para fazer testes internos antes de subir para o website/produção
+5. Selecione origin/main
 ---
 1. Para começarmos a subir o versionamento é importante saber duas coisas. 
     A. ANTES DE COMEÇAR QUALQUER MODIFICAÇÃO, SEMPRE DE PULL PARA PEGAR A ULTIMA VERSÃO DO PROJETO.
