@@ -34,7 +34,9 @@ git clone https://github.com/The-Mave/Good-Browser-Games.git
 3. Faça o procedimento que ele te indica de efetuar login pelo navegador e autorizar o uso do mesmo no VSCode
 4. Após fazer isso você estára logado.
 
-### Etapa 4: Fazendo Pull no Projeto
+### Etapa 4: Baixando última versão do repositório para a máquina local 
+O Pull é usado para buscar e baixar conteúdo de repositórios remotos e fazer a atualização imediata ao repositório local para que os conteúdos sejam iguais.
+
 1. Fazer o Pull é basicamente sincronizar o projeto que está no Github com o da sua maquina, no sentido de "baixar" os arquivos novos. É importante fazer isso sempre que for fazer alguma alteração, para que seu repositório não esteja desatualizado.
 2. Para "baixar" a ultima versão do projeto, clique em "Source Control" a ferramenta que fica logo abaixo da busca.
 
@@ -89,7 +91,15 @@ Pronto, branch criada.
 3. Pronto, o commit foi feito. 
 4. Agora basta publicar as alterações, para isso basta fazer a Publicação clicando em Publish Branch
 
+Quando você publica a Branch, ela não está oficialmente no repositório, ela está em um "braço" dele, para que as alterações que voê fez subam para o projeto principal "origin/main" você precisa criar um Pull Request para então fazer um Merge(juntar) com o projeto oficial
 
+### Fazendo um Pull Request
+O Pull Request é uma forma colaborativa de compartilhar criação ou mudanças de código no repositório, de forma que facilite ser revisado e/ou discutido entre todos os membros do time
 
+1. Para você poder sincronizar seu projeto local com o repositório você precisa criar um Pull Request (Pedido de Alteração)
+2. Para fazer isso, clique na ferramenta Create Pull Request no canto superior do Source Control
 
-Primeiramente você precisa fazer o clone do projeto:
+![image](https://user-images.githubusercontent.com/78883240/158822341-efe7300e-17e8-4a05-9e8d-0569d9efc92b.png)
+
+3. A tela de Pull Request irá aparecer, pedindo informações
+4. Na parte MERGE CHANGES FROM você irá selecionar de onde as alteraç~eos irão sair, no caso elas irãi sair da sua Branch Local, que foi criada no passo
