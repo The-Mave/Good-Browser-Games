@@ -44,21 +44,50 @@ git clone https://github.com/The-Mave/Good-Browser-Games.git
 
 3. Depois disso, clique nos três pontihos no superior direito do menu do SourceControl clique em Pull, Push > Pull from ... 
 4. E insira o nome da Remote que quer atualizar com seu projeto local, geralmente optamos sempre pela origin pois é a raiz de nosso projeto e é onde fica tudo que está em produção, podem existir outras remotes como, develop ou teste para fazer testes internos antes de subir para o website/produção
-5. Selecione origin/main
----
-1. Para começarmos a subir o versionamento é importante saber duas coisas. 
-    A. ANTES DE COMEÇAR QUALQUER MODIFICAÇÃO, SEMPRE DE PULL PARA PEGAR A ULTIMA VERSÃO DO PROJETO.
-    B. SEMPRE CRIE UMA BRANCH (RAMIFICAÇÃO) PARA CADA FEATURE QUE FOR IMPLEMENTAR
-2.  Dando o primeiro Pull, no menu de ramificação:
-![image](https://user-images.githubusercontent.com/78883240/158707711-a4cfefbf-9763-4e1c-a8d4-5813a13877c7.png)
-Clique nos três pontinhos
-![image](https://user-images.githubusercontent.com/78883240/158707734-6f7f52ba-b5b2-4f79-b689-b21456d948e3.png)
-Pull & Push > Pull from, para selecionarmos de qual ramificação queremos sincronizar o nosso projeto (o ideal é sempre sincronizar com a main/master) 
-![image](https://user-images.githubusercontent.com/78883240/158707754-ee738504-6c46-4172-aeb1-2227f4ff7b1f.png)
+5. Selecione origin/main e basta clicar, seu repositório será atualizado.
 
-3.  
-4. 
+Uma maneira mais pratica e visual de fazer isso é abrir o console do Visual Studio (ctrl + ') e digitar:
+> git pull
 
+Ele irá retornar uma mensagem positiva ou negativa do resultado.
+
+
+![image](https://user-images.githubusercontent.com/78883240/158712548-bb48e2c8-37ad-45e0-95df-9dc510e986bc.png)
+
+### Etapa 5: Subindo alterações I 
+#### Criando branch
+Uma ramificação no git é um ponteiro para as alterações feitas nos arquivos do projeto. É útil em situações nas quais você deseja adicionar um novo recurso ou corrigir um erro, gerando uma nova ramificação garantindo que o código instável não seja mesclado nos arquivos do projeto principal
+
+É importante que, para subir as modificações que você fez é sempre ideal criar uma branch para a mesma.
+1. Ao fazer alguma alteração, elas serão indicadas no menu de Source Control, você pode optar entre subir ou não uma alterção.
+2. Para subir uma das alterações, primeiramente você deve dar Stage nela, ou seja, preparar para o commit. 
+3. Você pode fazer isso colocando o mouse em cima do arquivo modificado na ferramenta de Source Controle  clicar na opção com um [ + ] 
+
+![image](https://user-images.githubusercontent.com/78883240/158714060-9cdaca94-a3ad-4c9c-a1bc-66e47860ae6a.png)
+
+4. Após fazer isso o arquivo será adicionado em Staged Changes, você pode adicionar mais de um arquivos para Staged Changes.
+5. Agora devemos criar uma branch para as alterações que foram feitas, nesse exemplo vou criar uma branch com o nome de "feature/teste"
+
+Geralmente usamos alguns prefixos para organizar melhor, como: 
+
+FEATURE - Para novas Funcionalidades
+HOTFIX - Para alterações
+
+Para criar a branch vamos clicar em três pontinhos (...) > Branch > Create Branch...  
+Então iremos colocar o nome da nossa branch: "feature/teste"
+
+Pronto, branch criada.
+
+#### Fazendo Commit
+"Commit refere-se ao processo de tornar permanente um conjunto de alterações, ou seja, de efetivar as alterações."
+
+1. Fazer um commit é basicamente definir que as alterações que você fez fiquem em um "pacote" 
+2. Para fazer o Commit basta clicar em:
+
+![image](https://user-images.githubusercontent.com/78883240/158714820-631f0cbb-4b4a-4bd9-be03-ee9af2f0fa3a.png)
+
+3. Pronto, o commit foi feito. 
+4. Agora basta publicar as alterações, para isso basta fazer a Publicação clicando em Publish Branch
 
 
 
