@@ -1,0 +1,28 @@
+{
+  "name": "good-browser-games",
+  "version": "1.0.0",
+  "description": "Neste exemplo vou explicar como utilizar o VSCode com a extensão Git.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Mave/Good-Browser-Games.git"
+  },
+  "author": "TheMave",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/The-Mave/Good-Browser-Games/issues"
+  },
+  "homepage": "https://github.com/The-Mave/Good-Browser-Games#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "path": "^0.12.7"
+  }
+}
