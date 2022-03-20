@@ -6,12 +6,10 @@ var path = require('path');
 
 router.get("/", function(req,res){
     console.log("Render de index funcionou!")
-    res.render("index");
-})
-router.get("/admin", function(req,res){
-    console.log("Admin de index funcionou!")
-    res.render("admin");
+    res.render("Home/index");
 })
 
 
-module.exports = router;
+
+// ROTAS ADMINISTRATIVO
+
