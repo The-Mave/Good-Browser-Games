@@ -9,30 +9,57 @@
     <title>Good Browser Games</title>
 </head>
 <body>
+    <style>
+        .hamb_tool{
+            float: left;
+        }
+        .search_tool{
+            float: left;
+            margin-left: 20px;
+        }
+        .bg_color{
+            background-color: rgba(71, 71, 71, 0.589)
+        }
+        #logo{
+            width: 80px;
+        }
+        #header{
+            background-color: rgb(24, 24, 24);
+        }
+        .white_label{
+            color: white;
+        }
+        body{
+            background-image: url("img/bg.jpg");
+        }
+    </style>
     <header>
         <!-- INICIO NAVBAR HEADER -->
-        <nav class="navbar navbar-light bg-light fixed-top" role="navigation">
+        <nav class="navbar navbar-dark bg-dark  fixed-top" role="navigation">
             <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div>
+                    <button class="navbar-toggler hamb_tool" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <form class="d-flex search_tool">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success " type="submit">Procurar</button>
+                    </form>
+                </div>
+                <!-- INICIO DE FERRAMENTA DE BUSCA  -->
                 
-                <!-- <img class= "src="/Content/img/logo.png" alt=""> --> <!-- TODO: ADICIONAR LOGO AQUI-->
+                <img id="logo" src="/img/logo.png" alt="">
                 
                 <a class="nav-item" href="/login">Entrar/Registrar</a>
                 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Procurar jogos</h5>
+                    <div class="offcanvas-header bg-dark">
+                        <h5 class="offcanvas-title white_label" id="offcanvasNavbarLabel">Procurar jogos</h5>
                             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body">
+                    <div class="offcanvas-body bg-dark ">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
-                            <!-- INICIO DE FERRAMENTA DE BUSCA  -->
-                            <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Procurar</button>
-                            </form>
+                            
                             <!-- FIM DE FERRAMENTA DE BUSCA  -->
                             
                             <!-- INICIO CATEGORIAS DE JOGOS  -->
@@ -80,4 +107,4 @@
           </nav>
     </header>
             <!-- ISSO É UM PARTIAL VIEW, SOMENTE O HEADER APARECE AQUI, NAO CONTINUE O CODIGO A PARTIR DAQI! -->
-<div class="container">
+<div class="container bg_color">
