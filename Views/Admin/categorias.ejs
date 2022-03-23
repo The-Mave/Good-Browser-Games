@@ -22,75 +22,14 @@
                 </tr>
             </thead>
             <tbody>
+                <% categorias.forEach((categoria)=> { %>
                 <tr>
-                <td>1</td>
-                <td>Ação</td>
+                <td><%= categoria._id %></td>
+                <td><%= categoria.nome %></td>
                 <td>10</td>
-                <td><a href="/admin/categorias/edit/id">Edit</a></td>
+                <td><a href="/admin/categorias/edit/<%= categoria._id %>">Edit</a></td>
                 </tr>
-                <tr>
-                <td>2</td>
-                <td>Ação</td>
-                <td>10</td>
-                
-                <td><a href="/admin/categorias/edit/id">Edit</a></td>
-                </tr>
-                <tr>
-                <td>3</td>
-                <td>Sonic</td>
-                <td>10</td>
-                
-                <td><a href="/admin/categorias/edit/id">Edit</a></td>
-                </tr>
-                <tr>
-                <td>4</td>
-                <td>Sonic</td>
-                <td>10</td>
-                
-                <td><a href="/admin/categorias/edit/id">Edit</a></td>
-                </tr>
-                <tr>
-                <td>5</td>
-                <td>Sonic</td>
-                <td>10</td>
-                
-                <td><a href="/admin/categorias/edit/id">Edit</a></td>
-                </tr>
-                <tr>
-                <td>6</td>
-                <td>Sonic</td>
-                <td>10</td>
-                
-                <td><a href="/admin/categorias/edit/id">Edit</a></td>
-                </tr>
-                <tr>
-                <td>7</td>
-                <td>Sonic</td>
-                <td>10</td>
-                
-                <td><a href="/admin/categorias/edit/id">Edit</a></td>
-                </tr>
-                <tr>
-                <td>8</td>
-                <td>Sonic</td>
-                <td>10</td>
-                
-                <td><a href="/admin/categorias/edit/id">Edit</a></td>
-                </tr>
-                <tr>
-                <td>9</td>
-                <td>Sonic</td>
-                <td>10</td>
-                
-                <td><a href="/admin/categorias/edit/id">Edit</a></td>
-                </tr>
-                <tr>
-                <td>10</td>
-                <td>Sonic</td>
-                <td>10</td>
-                
-                <td><a href="/admin/categorias/edit/id">Edit</a></td>
-                </tr> 
+                <% }) %> 
             </tbody>
             </table>
         </div>

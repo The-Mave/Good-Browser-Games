@@ -18,6 +18,7 @@
                 <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
+                <th scope="col">Sobrenome</th>
                 <th scope="col">E-mail</th>
                 <th scope="col">CPF</th>
                 <th scope="col">Data Nascimento</th>
@@ -26,15 +27,18 @@
                 </tr>
             </thead>
             <tbody>
+                <% usuarios.forEach((usuario)=> { %>
                 <tr>
-                <td>1</td>
-                <td>Matheus Avelino</td>
-                <td>32046685@mackenzista.com.br</td>
-                <td>489.XXX.XXX-XX</td>
-                <td>04/11/1999</td>
-                <td>True</td>
-                <td><a href="/admin/usuarios/edit/id">Edit</a></td>          
-                </tr>               
+                <td><%= usuario._id %></td>
+                <td><%= usuario.nome %></td>
+                <td><%= usuario.sobrenome %></td>
+                <td><%= usuario.email %></td>
+                <td><%= usuario.cpf %></td>
+                <td><%= usuario.nascimento %></td>
+                <td><input type = "checkbox" disabled="disabled" <%= usuario.administrador ? "checked" : "" %>></td>
+                <td><a href="/admin/usuarios/edit/<%= usuario._id %>">Edit</a></td>          
+                </tr>
+                <% }) %>              
             </tbody>
             </table>
         </div>
