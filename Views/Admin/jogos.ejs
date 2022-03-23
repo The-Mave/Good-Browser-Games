@@ -23,76 +23,15 @@
                 </tr>
             </thead>
             <tbody>
+                <% jogos.forEach((jogo)=> { %>
                 <tr>
-                <td>1</td>
-                <td>Sonic</td>
-                <td>Side-Scrolling, 16-BIT</td>
-                <td>3.6</td>
-                <td><a href="/admin/jogos/edit/id">Edit</a></td>
+                <td><%= jogo._id %></td>
+                <td><%= jogo.titulo %></td>
+                <td><%= jogo.categoria.nome %></td>
+                <td><%= jogo.avaliacao %></td>
+                <td><a href="/admin/jogos/edit/<%= jogo._id %>">Edit</a></td>
                 </tr>
-                <tr>
-                <td>2</td>
-                <td>Sonic</td>
-                <td>Side-Scrolling, 16-BIT</td>
-                <td>3.6</td>
-                <td><a href="/admin/jogos/edit/id">Edit</a></td>
-                </tr>
-                <tr>
-                <td>3</td>
-                <td>Sonic</td>
-                <td>Side-Scrolling, 16-BIT</td>
-                <td>3.6</td>
-                <td><a href="/admin/jogos/edit/id">Edit</a></td>
-                </tr>
-                <tr>
-                <td>4</td>
-                <td>Sonic</td>
-                <td>Side-Scrolling, 16-BIT</td>
-                <td>3.6</td>
-                <td><a href="/admin/jogos/edit/id">Edit</a></td>
-                </tr>
-                <tr>
-                <td>5</td>
-                <td>Sonic</td>
-                <td>Side-Scrolling, 16-BIT</td>
-                <td>3.6</td>
-                <td><a href="/admin/jogos/edit/id">Edit</a></td>
-                </tr>
-                <tr>
-                <td>6</td>
-                <td>Sonic</td>
-                <td>Side-Scrolling, 16-BIT</td>
-                <td>3.6</td>
-                <td><a href="/admin/jogos/edit/id">Edit</a></td>
-                </tr>
-                <tr>
-                <td>7</td>
-                <td>Sonic</td>
-                <td>Side-Scrolling, 16-BIT</td>
-                <td>3.6</td>
-                <td><a href="/admin/jogos/edit/id">Edit</a></td>
-                </tr>
-                <tr>
-                <td>8</td>
-                <td>Sonic</td>
-                <td>Side-Scrolling, 16-BIT</td>
-                <td>3.6</td>
-                <td><a href="/admin/jogos/edit/id">Edit</a></td>
-                </tr>
-                <tr>
-                <td>9</td>
-                <td>Sonic</td>
-                <td>Side-Scrolling, 16-BIT</td>
-                <td>3.6</td>
-                <td><a href="/admin/jogos/edit/id">Edit</a></td>
-                </tr>
-                <tr>
-                <td>10</td>
-                <td>Sonic</td>
-                <td>Side-Scrolling, 16-BIT</td>
-                <td>3.6</td>
-                <td><a href="/admin/jogos/edit/id">Edit</a></td>
-                </tr> 
+                <% }) %>
             </tbody>
             </table>
         </div>
