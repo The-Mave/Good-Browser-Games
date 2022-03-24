@@ -17,5 +17,9 @@ router
     .get("/admin/categorias/edit/:id", urlencodedParser, adminController.adminEditarCategorias)
     .get("/admin/usuarios/edit/:id", adminController.adminEditarUsuarios)
 
+    .get("/admin/jogos/create", adminController.adminCriarJogos)
+    .get("/admin/categorias/create", urlencodedParser, adminController.adminCriarCategorias)
+    .get("/admin/usuarios/create", adminController.adminCriarUsuarios)
+
 
 export default router;
