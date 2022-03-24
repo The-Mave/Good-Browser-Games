@@ -6,8 +6,8 @@
             overflow-x: auto;
         }
         .card-block{
-        width: 300px;
-        height: 180px;
+        width: 230px;
+        height: 140px;
         background-color: #fff;
         background-position: center;
         background-size: cover;
@@ -22,20 +22,34 @@
     .card{
         float: left;
     }
-    ::-webkit-scrollbar{
-        height: 8px;
-        width: 8px;
-        background: gray;
+    .col-3{
+        width: auto;
     }
-    ::-webkit-scrollbar-thumb:horizontal{
-        background: #000;
+    .styled_h_scroll > ::-webkit-scrollbar{
+        height: 10px;
+        border: 3px solid #28242c;
+        /* border-color: black; */
+        background-color: gray;
         border-radius: 10px;
     }
+    .styled_h_scroll > ::-webkit-scrollbar-thumb:horizontal{
+        /* background: rgb(20, 20, 20); */
+        background-color: #198754;
+        border:0px solid black;
+        border-radius: 10px;
+    }
+    .styled_h_scroll > ::-webkit-scrollbar-button{
+        width: 50px;
+
+    }
+
+
+    /* cor: #198754 */
         
     </style>
     <!-- INICIO SCROLL HORIZONTAL  -->
-    <h2>Jogos com mais avaliações positivas</h2>
-    <div class="container-fluid">
+    <h5 class="mt-5 white_label">JOGOS MAIS BEM AVALIADOS</h5>
+    <div class="container-fluid styled_h_scroll">
         <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
                 <div class="col-3">
                     <div class="card card-block card-1"></div>
@@ -57,8 +71,8 @@
                 </div>
         </div>
     </div>
-    <h2>Jogos Recomendados</h2>
-    <div class="container-fluid">
+    <h5 class="mt-5 white_label">JOGOS RECOMENDADOS</h5>
+    <div class="container-fluid styled_h_scroll">
         <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
                 <div class="col-3">
                     <div class="card card-block"></div>
@@ -80,14 +94,31 @@
                 </div>
         </div>
     </div>
-    <h2>Todos os Jogos</h2>
-    <div class="container">
-        <div class="card card-block"></div>
-        <div class="card card-block"></div>
-        <div class="card card-block"></div>
-        <div class="card card-block"></div>
-        <div class="card card-block"></div>
-        <div class="card card-block"></div>
-
+    <h5 class="mt-5 white_label">TODOS OS JOGOS</h5>
+    <div class="container-fluid ">
+            <div class="row flex-row mt-4 pb-4 pt-2">
+                    <div class="col-3 mb-4">
+                        <div class="card card-block"></div>
+                    </div>
+                    <div class="col-3 mb-4">
+                        <div class="card card-block"></div>
+                    </div>
+                    <div class="col-3 mb-4">
+                        <div class="card card-block"></div>
+                    </div>
+                    <div class="col-3 mb-4">
+                        <div class="card card-block"></div>
+                    </div>
+                    <div class="col-3 mb-4">
+                        <div class="card card-block"></div>
+                    </div>
+                    <div class="col-3 mb-4">
+                        <div class="card card-block "></div>
+                    </div>
+            </div>
+        </div>
+        <a class="btn btn-primary" style="background-color: #3b5998;" href="/admin/dashboard" role="button">
+            <p>Admin Dashboard, clique aqui</p>
+          </a>
     </div>
 <%- include('../_partial/_footer.ejs') %>
