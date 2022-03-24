@@ -1,0 +1,57 @@
+<%- include('../_partial/_header_admin.ejs') %>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Editor de Jogos</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary">Block User</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" onClick="history.go(-1)">Cancel</button>
+            </div>
+            </div>
+        </div> 
+            <form>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                    <label class="form-check-label" for="flexCheckChecked">
+                      Administrator
+                    </label>
+                </div>
+                <div class="mb-3">
+                  <label for="nome" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="nome" value="<%= usuario.nome %>">
+                  <div id="dica_nome" class="form-text">Nome Completo</div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" value="<%= usuario.email %>">
+                    <div id="dica_email" class="form-text">Email</div>
+                </div>
+                <fieldset disabled>
+                <div class="mb-3">
+                    <label for="descricao" class="form-label">CPF</label>
+                    <input type="text" class="form-control" id="descricao" value="<%= usuario.cpf %>" rows="3"></textarea>
+                    <div id="dica_descricao" class="form-text">CPF</div>
+                </div>
+                </fieldset>  
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Data Nascimento</label>
+                    <input type="text" class="form-control" id="nome" value="<%= usuario.nascimento %>">
+                    <div id="dica_nome" class="form-text">Data de nascimento</div>
+                  </div>
+                
+                <!-- <div class="mb-3">
+                    <label class="form-label" for="customFile">Selecionar Thumbnail</label>
+                    <input type="file" class="form-control" id="customFile" />
+                    <div id="dica_url" class="form-text">Adicione uma imagem de capa para o jogo.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="imagens" class="form-label">Selecione imagens para o carrosel</label>
+                    <input class="form-control" type="file" id="imagens" multiple>
+                  </div> -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </main>
+    </div>
+    </div>
+
+
+<%- include('../_partial/_footer_Admin.ejs') %>
