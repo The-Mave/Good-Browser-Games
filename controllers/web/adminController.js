@@ -71,25 +71,27 @@ const adminEditarUsuarios = (req,res) => {
 // CREATE CRUD
 
 const adminCriarUsuarios = (req,res) => {
-      res.render("Admin/usuarios_create");
+
+  res.render("Admin/usuarios_create");
 }
 
 const adminCriarJogos = (req,res) => {
-  res.render("Admin/jogos_create");
+res.render("Admin/jogos_create");
 }
 
 const adminCriarCategorias = (req,res) => {
-  res.render("Admin/categorias_create");
+res.render("Admin/categorias_create");
 }
 export default {
-    dashboard,
-    adminObterJogos,
-    adminObterCategorias,
-    adminObterUsuarios,
-    adminEditarJogos,
-    adminEditarCategorias,
-    adminEditarUsuarios,
-    adminCriarCategorias,
-    adminCriarJogos,
-    adminCriarUsuarios
-  };
+dashboard,
+adminObterJogos,
+adminObterCategorias,
+adminObterUsuarios,
+adminEditarJogos,
+adminEditarCategorias,
+adminEditarUsuarios,
+adminCriarCategorias,
+adminCriarJogos,
+adminCriarUsuarios
+};
+

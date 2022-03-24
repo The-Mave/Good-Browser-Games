@@ -14,7 +14,7 @@ const listarCategoriaPorId = (req, res) => {
     if (err) {
       res
         .status(400)
-        .send({ message: `${err.message} - Id do categoria não localizado.` });
+        .send({ message: `${err.message} - Id da categoria não localizado.` });
     } else {
       res.status(200).send(livros);
     }
@@ -27,7 +27,7 @@ const cadastrarCategoria = (req, res) => {
     if (err) {
       res
         .status(500)
-        .send({ message: `${err.message} - Falha ao cadastrar o categoria` });
+        .send({ message: `${err.message} - Falha ao cadastrar a categoria` });
     } else {
       res.status(201).send(categoria.toJSON());
     }
@@ -36,10 +36,11 @@ const cadastrarCategoria = (req, res) => {
 
 const atualizarCategoria = (req, res) => {
   const id = req.params.id;
+  const nome = req.body.nome;
 
-  categorias.findByIdAndUpdate(id, { $set: req.body }, (err) => {
+  categorias.findByIdAndUpdate(id, { $set: req.body }, {new: true}, (err, doc) => {
     if (!err) {
-      res.status(200).send({ message: "Livro atualizado com sucesso" });
+      res.redirect('/admin/categorias')
     } else {
       res.status(500).send({ message: err.message });
     }
@@ -51,7 +52,7 @@ const excluirCategoria = (req, res) => {
 
   categorias.findByIdAndDelete(id, (err) => {
     if (!err) {
-      res.status(200).send({ message: "Categoria removido com sucesso" });
+      res.status(200).send({ message: "Categoria removida com sucesso" });
     } else {
       res.status(500).send({ message: err.message });
     }
