@@ -40,12 +40,15 @@ const adminObterUsuarios = (req, res) => {
 
 const adminEditarJogos = (req,res) => {
     const id = req.params.id;
-
-    jogos.findById(id).then((result) => {
+    categorias.find().then((categorias) => {
+    jogos.findById(id).then((jogo) => {
         res.render("Admin/jogos_edit", {
-          jogo: result
-        });
-      });
+          jogo: jogo,
+          categorias: categorias
+        })
+      })
+    }
+    )
 }
 
 const adminEditarCategorias = (req,res) => {
@@ -76,8 +79,12 @@ const adminCriarUsuarios = (req,res) => {
 }
 
 const adminCriarJogos = (req,res) => {
-res.render("Admin/jogos_create");
-}
+  categorias.find().then((result) => {
+    res.render("Admin/jogos_create", {
+      categorias: result,
+    });
+  });
+};
 
 const adminCriarCategorias = (req,res) => {
 res.render("Admin/categorias_create");

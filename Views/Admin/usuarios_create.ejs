@@ -7,9 +7,9 @@
             </div>
             </div>
         </div> 
-            <form>
+            <form method="post" action="/usuarios/">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                    <input class="form-check-input" type="checkbox" id="flexCheckChecked" name="administrador" >
                     <label class="form-check-label" for="flexCheckChecked">
                       Administrator
                     </label>
@@ -17,32 +17,45 @@
                 <div class="mb-3">
                   <label for="nome" class="form-label">Nome</label>
 
-                  <input type="text" class="form-control" id="nome">
+                  <input type="text" class="form-control" id="nome" name="nome">
 
                   <div id="dica_nome" class="form-text">Nome Completo</div>
                 </div>
                 <div class="mb-3">
+                    <label for="sobrenome" class="form-label">Sobrenome</label>
+
+                    <input type="sobrenome" class="form-control" id="sobrenome" name="sobrenome">
+
+                    <div id="dica_sobrenome" class="form-text">Sobrenome</div>
+                </div>
+
+                <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
 
-                    <input type="email" class="form-control" id="email">
+                    <input type="email" class="form-control" id="email" name="email">
 
                     <div id="dica_email" class="form-text">Email</div>
                 </div>
-
                 <div class="mb-3">
-                    <label for="descricao" class="form-label">CPF</label>
+                    <label for="cpf" class="form-label">CPF</label>
 
-                    <input type="text" class="form-control" id="descricao" rows="3"></textarea>
+                    <input type="text" class="form-control" id="cpf" name="cpf" rows="3"></input>
 
-                    <div id="dica_descricao" class="form-text">CPF</div>
+                    <div id="dica_cpf" class="form-text">CPF</div>
                 </div>
-
                 <div class="mb-3">
-                    <label for="nome" class="form-label">Data Nascimento</label>
+                    <label for="nascimento" class="form-label">Data Nascimento</label>
 
-                    <input type="text" class="form-control" id="nome">
+                    <input type="date" class="form-control" id="nascimento" name="nascimento">
 
-                    <div id="dica_nome" class="form-text">Data de nascimento</div>
+                    <div id="dica_nascimento" class="form-text">Data de nascimento</div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="imagem" class="form-label">Insira sua imagem</label>
+
+                    <input type="text" class="form-control" id="imagem" name="imagem">
+
+                    <div id="dica_imagem" class="form-text">Insira a url da sua imagem</div>
                   </div>
                 
                 <!-- <div class="mb-3">
