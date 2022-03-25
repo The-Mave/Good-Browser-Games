@@ -1,4 +1,5 @@
 import jogos from "../../models/Jogo.js";
+import categorias from "../../models/Categoria.js";
 
 const listarJogos = (req, res) => {
   jogos.find()
@@ -25,17 +26,32 @@ const listarJogoPorId = (req, res) => {
 };
 
 const cadastrarJogo = (req, res) => {
-  let jogo = new jogos(req.body);
-  jogo.save((err) => {
+  categorias.findOne({ nome: req.body.categoria }, {}, (err, categoria) => {
     if (err) {
-      res
-        .status(500)
-        .send({ message: `${err.message} - Falha ao cadastrar o jogo` });
+      res.status(400).send({ message: `Categoria não encontrada` });
     } else {
-      res.status(201).send(jogo.toJSON());
+      let jogo = new jogos({
+        titulo: req.body.titulo,
+        categoria: categoria,
+        avaliacao: 0,
+        descricao: req.body.descricao,
+        qtd_avaliacoes: 0,
+        url: req.body.url,
+        imagem: req.body.imagem})
+    
+      jogo.save((err) => {
+        if (err) {
+          res
+            .status(500)
+            .send({ message: `${err.message} - Falha ao cadastrar o jogo` });
+        } else {
+          res.redirect('/admin/jogos')
+        }
+      })
+      }
     }
-  });
-};
+  )
+}
 
 const atualizarJogo = (req, res) => {
   const id = req.params.id;

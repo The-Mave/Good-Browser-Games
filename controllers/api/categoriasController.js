@@ -29,14 +29,13 @@ const cadastrarCategoria = (req, res) => {
         .status(500)
         .send({ message: `${err.message} - Falha ao cadastrar a categoria` });
     } else {
-      res.status(201).send(categoria.toJSON());
+      res.redirect('/admin/categorias')
     }
   });
 };
 
 const atualizarCategoria = (req, res) => {
   const id = req.params.id;
-  const nome = req.body.nome;
 
   categorias.findByIdAndUpdate(id, { $set: req.body }, {new: true}, (err, doc) => {
     if (!err) {
@@ -52,7 +51,7 @@ const excluirCategoria = (req, res) => {
 
   categorias.findByIdAndDelete(id, (err) => {
     if (!err) {
-      res.status(200).send({ message: "Categoria removida com sucesso" });
+      res.redirect('/admin/categorias')
     } else {
       res.status(500).send({ message: err.message });
     }
