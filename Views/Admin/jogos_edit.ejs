@@ -3,35 +3,39 @@
             <h1 class="h2">Editor de Jogos</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-                <button type="button" class="btn btn-outline-danger">Delete Game</button>
-                <button type="button" class="btn btn-outline-secondary" onClick="history.go(-1)">Cancel</button>
+
+                <form method="post" action="/jogos/<%= jogo._id %>?_method=DELETE">
+                    <button type="button" class="btn btn-outline-danger">Delete Game</button>
+                </form>
+               <button type="button" class="btn btn-outline-secondary" onClick="history.go(-1)">Cancel</button>
+
             </div>
             </div>
         </div> 
-            <form>
+            <form method="post" action="/jogos/<%= jogo._id %>?_method=PUT">
                 <div class="mb-3">
                   <label for="nome" class="form-label">Nome do jogo</label>
-                  <input type="text" class="form-control" id="nome" value="<%= jogo.titulo %>">
+                  <input type="text" class="form-control" id="nome" name="titulo" value="<%= jogo.titulo %>">
                   <div id="dica_nome" class="form-text">Insira o nome do jogo aqui.</div>
                 </div>
                 <div class="mb-3">
                     <label for="url" class="form-label">Link do Jogo</label>
-                    <input type="text" class="form-control" id="url" value="<%= jogo.url %>">
+                    <input type="text" class="form-control" id="url" name="url" value="<%= jogo.url %>">
                     <div id="dica_url" class="form-text">Insira a URL do jogo aqui.</div>
                 </div>
                 <div class="mb-3">
                     <label for="descricao" class="form-label">Descrição</label>
-                    <textarea class="form-control" id="descricao" rows="3"><%= jogo.descricao %></textarea>
+                    <textarea class="form-control" id="descricao" name="descricao" rows="3"><%= jogo.descricao %></textarea>
                     <div id="dica_descricao" class="form-text">Adicione uma descrição sobre o jogo.</div>
                 </div>  
                 <div class="mb-3">
                     <label for="nome" class="form-label">Categorias</label>
-                    <input type="text" class="form-control" id="nome" value="<%= jogo.categoria %>">
-                    <div id="dica_nome" class="form-text">Insira a categoria separando com ,</div>
+                    <input type="text" class="form-control" id="nome" name="categoria" value="<%= jogo.categoria %>">
+                    <div id="dica_nome" class="form-text">Insira o nome da categoria</div>
                   </div>
                 <div class="mb-3">
                     <label class="form-label" for="customFile">Selecionar Thumbnail</label>
-                    <input type="text" class="form-control" id="customFile" value="<%= jogo.imagem %>" />
+                    <input type="text" class="form-control" id="customFile" name="imagem" value="<%= jogo.imagem %>" />
                     <div id="dica_url" class="form-text">Adicione uma imagem de capa para o jogo.</div>
                 </div>
                 <div class="mb-3">
