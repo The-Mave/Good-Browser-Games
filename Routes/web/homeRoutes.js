@@ -7,5 +7,6 @@ router
     .get("/", homeController.index)
     .get("/login", homeController.login)
     .get("/signup", homeController.signup)
+    .get("/perfil", homeController.perfil)
 
 export default router;

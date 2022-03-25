@@ -10,13 +10,13 @@ const listarCategorias = (req, res) => {
 const listarCategoriaPorId = (req, res) => {
   const id = req.params.id;
 
-  categorias.findById(id, (err, livros) => {
+  categorias.findById(id, (err, jogos) => {
     if (err) {
       res
         .status(400)
         .send({ message: `${err.message} - Id da categoria não localizado.` });
     } else {
-      res.status(200).send(livros);
+      res.status(200).send(jogos);
     }
   });
 };
