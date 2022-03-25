@@ -7,6 +7,8 @@ const dashboard = (req,res) => {
     res.render("admin/index");
 }
 
+// READ
+
 const adminObterJogos = (req, res) => {
   jogos.find()
   .populate('categoria')
@@ -33,7 +35,7 @@ const adminObterUsuarios = (req, res) => {
   });
 };
 
-// EDITOR CRUD
+// UPDATE CRUD
 
 
 const adminEditarJogos = (req,res) => {
@@ -69,6 +71,7 @@ const adminEditarUsuarios = (req,res) => {
 // CREATE CRUD
 
 const adminCriarUsuarios = (req,res) => {
+
   res.render("Admin/usuarios_create");
 }
 
@@ -91,3 +94,4 @@ adminCriarCategorias,
 adminCriarJogos,
 adminCriarUsuarios
 };
+

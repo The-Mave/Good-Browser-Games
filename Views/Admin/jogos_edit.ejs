@@ -3,10 +3,12 @@
             <h1 class="h2">Editor de Jogos</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
+
                 <form method="post" action="/jogos/<%= jogo._id %>?_method=DELETE">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Delete Game</button>
+                    <button type="button" class="btn btn-outline-danger">Delete Game</button>
                 </form>
-                <button type="button" class="btn btn-sm btn-outline-secondary">Cancel</button>
+               <button type="button" class="btn btn-outline-secondary" onClick="history.go(-1)">Cancel</button>
+
             </div>
             </div>
         </div> 
