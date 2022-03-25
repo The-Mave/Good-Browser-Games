@@ -30,10 +30,9 @@
                 <label for="categorias">Selecione a categoria abaixo:</label>
 
                 <select class="form-control dropdown" name="categoria" id="categorias">
-                    <option value="op1">op1</option>
-                    <option value="op2">op2</option>
-                    <option value="op3">op3</option>
-                    <option value="op4">op4</option>
+                    <% categorias.forEach((categoria)=> { %>
+                    <option value="<%= categoria._id %>"><%= categoria.nome %></option>
+                    <% }) %>
                   </select>
                 <div class="mb-3">
                     <label class="form-label" for="customFile">Selecionar Thumbnail</label>

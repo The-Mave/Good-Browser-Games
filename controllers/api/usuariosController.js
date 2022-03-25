@@ -25,24 +25,34 @@ const listarUsuarioPorId = (req, res) => {
 };
 
 const cadastrarUsuario = (req, res) => {
-  let usuario = new usuarios(req.body);
+  let usuario = new usuarios({
+  nome: req.body.nome,
+  sobrenome: req.body.sobrenome,
+  email: req.body.email,
+  cpf: req.body.cpf,
+  nascimento: req.body.nascimento.split('-').reverse().join('/'),
+  imagem: req.body.imagem,
+  jogos: [],
+  administrador: Boolean(req.body.administrador),
+  });
   usuario.save((err) => {
     if (err) {
       res
         .status(500)
         .send({ message: `${err.message} - Falha ao cadastrar o usuario` });
     } else {
-      res.status(201).send(usuario.toJSON());
+      res.redirect("/admin/usuarios");
     }
   });
 };
 
 const atualizarUsuario = (req, res) => {
   const id = req.params.id;
+  req.body.administrador = Boolean(req.body.administrador);
 
   usuarios.findByIdAndUpdate(id, { $set: req.body }, (err) => {
     if (!err) {
-      res.status(200).send({ message: "Livro atualizado com sucesso" });
+      res.redirect("/admin/usuarios");
     } else {
       res.status(500).send({ message: err.message });
     }
@@ -54,7 +64,7 @@ const excluirUsuario = (req, res) => {
 
   usuarios.findByIdAndDelete(id, (err) => {
     if (!err) {
-      res.status(200).send({ message: "Usuario removido com sucesso" });
+      res.redirect("/admin/usuarios");
     } else {
       res.status(500).send({ message: err.message });
     }

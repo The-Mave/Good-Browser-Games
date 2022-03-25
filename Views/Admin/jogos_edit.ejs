@@ -5,7 +5,7 @@
             <div class="btn-group me-2">
 
                 <form method="post" action="/jogos/<%= jogo._id %>?_method=DELETE">
-                    <button type="button" class="btn btn-outline-danger">Delete Game</button>
+                    <button type="submit" class="btn btn-outline-danger">Delete Game</button>
                 </form>
                <button type="button" class="btn btn-outline-secondary" onClick="history.go(-1)">Cancel</button>
 
@@ -29,9 +29,12 @@
                     <div id="dica_descricao" class="form-text">Adicione uma descrição sobre o jogo.</div>
                 </div>  
                 <div class="mb-3">
-                    <label for="nome" class="form-label">Categorias</label>
-                    <input type="text" class="form-control" id="nome" name="categoria" value="<%= jogo.categoria %>">
-                    <div id="dica_nome" class="form-text">Insira o nome da categoria</div>
+                    <label for="categorias">Selecione a categoria abaixo:</label>
+                    <select class="form-control dropdown" name="categoria" id="categorias"  value="<%= jogo.categoria.nome %>">
+                    <% categorias.forEach((categoria)=> { %>
+                    <option value="<%= categoria._id %>"><%= categoria.nome %></option>
+                    <% }) %>
+                  </select>
                   </div>
                 <div class="mb-3">
                     <label class="form-label" for="customFile">Selecionar Thumbnail</label>
