@@ -1,8 +1,8 @@
 import express from "express"
 import bodyParser from "body-parser"
 import path from "path"
-import routes from "./routes/index.js"
-import db from "./config/dbConnect.js"
+import routes from "/routes/index.js"
+import db from "/config/dbConnect.js"
 import { fileURLToPath } from 'url'
 import methodOverride from 'method-override'
 
