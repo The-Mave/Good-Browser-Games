@@ -18,7 +18,7 @@ app.use(methodOverride('_method'));
 app.use(jsonParser);
 app.use(urlencodedParser)
 
-app.set("port", process.env.PORT || 8080);
+app.set("port", process.env.PORT || 3000);
 
 app.set('views', path.join(__dirname,'views'));
 app.set("view engine", "ejs");
