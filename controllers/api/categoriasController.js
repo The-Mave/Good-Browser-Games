@@ -1,4 +1,4 @@
-import categorias from "../../models/Categoria.js";
+import categorias from "../../models/categoria.js";
 
 
 const listarCategorias = (req, res) => {

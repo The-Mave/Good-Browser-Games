@@ -1,4 +1,4 @@
-import usuarios from "../../models/Usuario.js";
+import usuarios from "../../models/usuario.js";
 
 const listarUsuarios = (req, res) => {
   usuarios.find()

@@ -1,5 +1,5 @@
-import jogos from "../../models/Jogo.js";
-import categorias from "../../models/Categoria.js";
+import jogos from "../../models/jogo.js";
+import categorias from "../../models/categoria.js";
 
 const listarJogos = (req, res) => {
   jogos

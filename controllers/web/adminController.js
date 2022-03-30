@@ -1,6 +1,6 @@
-import jogos from "../../models/Jogo.js";
-import categorias from "../../models/Categoria.js";
-import usuarios from "../../models/Usuario.js";
+import jogos from "../../models/jogo.js";
+import categorias from "../../models/categoria.js";
+import usuarios from "../../models/usuario.js";
 
 const dashboard = (req,res) => {
     console.log("Admin de index funcionou!")
