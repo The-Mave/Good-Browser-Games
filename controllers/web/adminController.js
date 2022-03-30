@@ -42,7 +42,7 @@ const adminEditarJogos = (req,res) => {
     const id = req.params.id;
     categorias.find().then((categorias) => {
     jogos.findById(id).then((jogo) => {
-        res.render("Admin/jogos_edit", {
+        res.render("admin/jogos_edit", {
           jogo: jogo,
           categorias: categorias
         })
@@ -55,7 +55,7 @@ const adminEditarCategorias = (req,res) => {
     const id = req.params.id;
 
     categorias.findById(id).then((result) => {
-        res.render("Admin/categorias_edit", {
+        res.render("admin/categorias_edit", {
           categoria: result
         });
       });
@@ -65,7 +65,7 @@ const adminEditarUsuarios = (req,res) => {
     const id = req.params.id;
 
     usuarios.findById(id).then((result) => {
-        res.render("Admin/usuarios_edit", {
+        res.render("admin/usuarios_edit", {
           usuario: result
         });
       });
@@ -75,19 +75,19 @@ const adminEditarUsuarios = (req,res) => {
 
 const adminCriarUsuarios = (req,res) => {
 
-  res.render("Admin/usuarios_create");
+  res.render("admin/usuarios_create");
 }
 
 const adminCriarJogos = (req,res) => {
   categorias.find().then((result) => {
-    res.render("Admin/jogos_create", {
+    res.render("admin/jogos_create", {
       categorias: result,
     });
   });
 };
 
 const adminCriarCategorias = (req,res) => {
-res.render("Admin/categorias_create");
+res.render("admin/categorias_create");
 }
 export default {
 dashboard,
