@@ -14,4 +14,5 @@ router
     .put("/categorias/:id", jsonParser, categoriaController.atualizarCategoria)
     .delete("/categorias/:id", jsonParser, categoriaController.excluirCategoria)
 
+    
 export default router;
