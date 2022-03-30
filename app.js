@@ -13,7 +13,7 @@ const app = express();
 const jsonParser = bodyParser.json()
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-app.use(express.static('Content'));
+app.use(express.static('content'));
 app.use(methodOverride('_method'));
 app.use(jsonParser);
 app.use(urlencodedParser)
