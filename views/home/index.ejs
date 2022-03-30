@@ -1,0 +1,124 @@
+<%- include('../_partial/_header.ejs') %>
+    <h1>Teste Good Browser Games</h1>
+ 
+    <style>
+        .scrolling-wrapper{
+            overflow-x: auto;
+        }
+        .card-block{
+        width: 230px;
+        height: 140px;
+        background-color: #fff;
+        background-position: center;
+        background-size: cover;
+        transition: all 0.2s ease-in-out !important;
+        border-radius: 24px;
+    } 
+    .card-block:hover{
+        transform: translateY(-5px);
+        box-shadow: none;
+        opacity: 0.9;
+    }
+    .card{
+        float: left;
+    }
+    .col-3{
+        width: auto;
+    }
+    .styled_h_scroll > ::-webkit-scrollbar{
+        height: 10px;
+        border: 3px solid #28242c;
+        /* border-color: black; */
+        background-color: gray;
+        border-radius: 10px;
+    }
+    .styled_h_scroll > ::-webkit-scrollbar-thumb:horizontal{
+        /* background: rgb(20, 20, 20); */
+        background-color: #198754;
+        border:0px solid black;
+        border-radius: 10px;
+    }
+    .styled_h_scroll > ::-webkit-scrollbar-button{
+        width: 50px;
+
+    }
+
+
+    /* cor: #198754 */
+        
+    </style>
+    <!-- INICIO SCROLL HORIZONTAL  -->
+    <h5 class="mt-5 white_label">JOGOS MAIS BEM AVALIADOS</h5>
+    <div class="container-fluid styled_h_scroll">
+        <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
+                <div class="col-3">
+                    <div class="card card-block card-1"></div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-block card-2"></div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-block card-3"></div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-block card-4"></div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-block card-5"></div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-block card-6"></div>
+                </div>
+        </div>
+    </div>
+    <h5 class="mt-5 white_label">JOGOS RECOMENDADOS</h5>
+    <div class="container-fluid styled_h_scroll">
+        <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
+                <div class="col-3">
+                    <div class="card card-block"></div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-block"></div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-block"></div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-block"></div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-block"></div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-block "></div>
+                </div>
+        </div>
+    </div>
+    <h5 class="mt-5 white_label">TODOS OS JOGOS</h5>
+    <div class="container-fluid ">
+            <div class="row flex-row mt-4 pb-4 pt-2">
+                    <div class="col-3 mb-4">
+                        <div class="card card-block"></div>
+                    </div>
+                    <div class="col-3 mb-4">
+                        <div class="card card-block"></div>
+                    </div>
+                    <div class="col-3 mb-4">
+                        <div class="card card-block"></div>
+                    </div>
+                    <div class="col-3 mb-4">
+                        <div class="card card-block"></div>
+                    </div>
+                    <div class="col-3 mb-4">
+                        <div class="card card-block"></div>
+                    </div>
+                    <div class="col-3 mb-4">
+                        <div class="card card-block "></div>
+                    </div>
+            </div>
+        </div>
+        <a class="btn btn-primary" style="background-color: #3b5998;" href="/admin/dashboard" role="button">
+            <p>Admin Dashboard, clique aqui</p>
+          </a>
+    </div>
+<%- include('../_partial/_footer.ejs') %>
