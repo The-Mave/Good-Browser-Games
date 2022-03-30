@@ -1,5 +1,5 @@
 import categorias from "../../models/categoria.js";
-
+ 
 
 const listarCategorias = (req, res) => {
   categorias.find((err, categorias) => {
