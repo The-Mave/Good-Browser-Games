@@ -5,16 +5,17 @@ const index = (req,res) => {
 }
 
 const login = (req,res) => {
-    console.log("Render de index funcionou!")
+    console.log("Render de login funcionou!")
     res.render("Home/login");
 }
 
 const signup = (req,res) => {
-    console.log("Render de index funcionou!")
+    console.log("Render de signup funcionou!")
     res.render("Home/signup");
 }
+
 const perfil =(req,res) =>{
-    console.log("Você entrou no perfil")
+    console.log("Você perfil no perfil")
     res.render("Home/perfil");
 }
 export default {
