@@ -7,7 +7,7 @@ const usuarioSchema = new mongoose.Schema({
   email: { type: String, required: true },
   cpf: { type: String, required: true },
   nascimento: { type: String, required: true },
-  imagem: { type: String, required: false },
+  imagem: { type: String, required: true },
   jogos: [{ type: mongoose.Schema.Types.ObjectId, ref: 'jogos'}],
   administrador: { type: Boolean, required: true },
 },
