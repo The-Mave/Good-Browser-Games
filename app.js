@@ -5,6 +5,13 @@ import routes from "./routes/index.js"
 import db from "./config/dbConnect.js"
 import { fileURLToPath } from 'url'
 import methodOverride from 'method-override'
+import dotenv from 'dotenv'
+import bcrypt from 'bcrypt'
+import jsonwebtoken from 'jsonwebtoken'
+
+dotenv.config()
+const cryptography = bcrypt
+const jwt = jsonwebtoken
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename)
