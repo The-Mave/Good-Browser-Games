@@ -2,10 +2,18 @@
 <body class="text-center">
   
 <main id="mainpage" class="form-signin">
-<form>
+<form method='post' action="/auth/register">
   <img class="mt-4 mb-2" src="/img/logo.png" alt="" width="100px">
   <h1 class="h3 mb-3 fw-normal">Faça Login</h1>
-
+  
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" name="nome">
+    <label for="floatingInput">Nome</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" name="sobrenome">
+    <label for="floatingInput">Sobrenome</label>
+  </div>
   <div class="form-floating mb-3">
     <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
     <label for="floatingInput">Email</label>
