@@ -5,7 +5,7 @@ const index = (req,res) => {
 }
 
 const perfil =(req,res) =>{
-    console.log("Você entrou no perfil")
+    console.log("Você perfil no perfil")
     res.render("Home/perfil");
 }
 export default {
