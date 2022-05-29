@@ -4,24 +4,12 @@ const index = (req,res) => {
     res.render("Home/index");
 }
 
-const login = (req,res) => {
-    console.log("Render de login funcionou!")
-    res.render("Home/login");
-}
-
-const signup = (req,res) => {
-    console.log("Render de signup funcionou!")
-    res.render("Home/signup");
-}
-
 const perfil =(req,res) =>{
     console.log("Você perfil no perfil")
     res.render("Home/perfil");
 }
 export default {
     index,
-    login,
-    signup,
     perfil
 
   };
