@@ -101,7 +101,7 @@ width: 50px;
 
 /* Overlay */
 
-#overlay {
+.overlay {
   position: fixed; 
   display: none; 
   width: 100%; 
@@ -116,7 +116,7 @@ width: 50px;
 }
 
 
-#overlay_container{
+.overlay_container{
   position:fixed;
   top: 55%;
   left: 50%;
@@ -124,7 +124,7 @@ width: 50px;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
 }
-#overlay_gameinfo{
+.overlay_gameinfo{
   display: block;
 }
 .overlay_title{

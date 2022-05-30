@@ -9,28 +9,31 @@
     Overlay jogos
 
  -->
- <div onclick="" id="overlay">
-        <button style="margin-top:50px" onclick="overlay_off()">X</button>
-        <div id="overlay_container">
+ <% jogos.forEach((jogo, index)=> { %>
+    <div onclick="" class="overlay" id="overlay<%= index %>">
+        <button style="margin-top:50px" onclick="overlay_off(<%= index %>)">X</button>
+        <div class="overlay_container">
             
-            <div class="overlay_card"></div>
-            <h1 class="text-white text-center overlay_title">Titulo</h1>
-            <div id="overlay_gameinfo">
+            <div class="overlay_card">
+                <img height=100% width=100% src="<%= jogo.imagem %>" alt="<%= jogo.imagem %>">
+            </div>
+            <h1 class="text-white text-center overlay_title"><%= jogo.titulo %></h1>
+            <div class="overlay_gameinfo">
                 
-                <p class="text-white font-weight-light">Mussum Ipsum, cacilds vidis litro abertis. <br> Per aumento de cachacis, eu reclamis.Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. <br> Sed non consequat odio.Paisis, filhis, espiritis santis.Sapien in monti palavris <br> qui num significa nadis i pareci latim.</p>
-                <button class="btn btn-outline-success overlay_jogar" >Jogar</button>
+                <p class="text-white font-weight-light"><%= jogo.descricao %></p>
+                <button class="btn btn-outline-success overlay_jogar" onclick="window.open(<%= jogo.url %>)">Jogar</button><!-- Não está abrindo a página do jogo -->>
                 <button class="btn btn-outline-success overlay_avaliar" onclick="overlay_gameinfo_off();overlay_avaliacao_1_on()">Avaliar</button>
             </div>
             <!-- <form action=""> -->
-            <div id="overlay_avaliacao_1">
+            <div class="overlay_avaliacao_1">
                 <div class="mb-3">
                     <textarea style="width: 40%;" id="descricao" name="descricao" rows="3"></textarea>
-                <div id="dica_descricao" class="form-text">Adicione uma descrição sobre o jogo.</div>
+                <div class="dica_descricao" class="form-text">Adicione uma descrição sobre o jogo.</div>
                 </div>
                 <button class="btn btn-outline-success " onclick="overlay_gameinfo_on();overlay_avaliacao_1_off()">Voltar</button>
                 <button class="btn btn-outline-success" onclick="overlay_avaliacao_1_off();overlay_avaliacao_2_on()">Proximo</button>
             </div>
-            <div id="overlay_avaliacao_2">
+            <div class="overlay_avaliacao_2">
 
                 <div style="width: 100%;">
                     <div class="estrelas">
@@ -92,9 +95,10 @@
             <!-- </form> -->
             <!-- COMENTARIO     -->
             
-        </div>
-        
- </div>
+        </div>    
+    </div>
+<% }) %>
+
  <!-- 
 
     HORIZONTAL SCROLLER JOGOS MAIS BEM AVALIADOS
@@ -103,24 +107,13 @@
     <h5 class="mt-5 white_label">JOGOS MAIS BEM AVALIADOS</h5>
     <div class="container-fluid styled_h_scroll">
         <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
-                <div onclick="overlay_on()" class="col-3">
-                    <div class="card card-block card-1"></div>
+            <% jogos.forEach((jogo, index)=> { %>
+                <div onclick="overlay_on(<%= index %>)" class="col-3">
+                    <div class="card card-block">
+                        <img height=100% width=100% src= <%= jogo.imagem %> alt="<%= jogo.imagem %>">
+                    </div>
                 </div>
-                <div onclick="overlay_on()"   class="col-3">
-                    <div class="card card-block card-2"></div>
-                </div>
-                <div onclick="overlay_on()"   class="col-3">
-                    <div class="card card-block card-3"></div>
-                </div>
-                <div onclick="overlay_on()"   class="col-3">
-                    <div class="card card-block card-4"></div>
-                </div>
-                <div onclick="overlay_on()"   class="col-3">
-                    <div class="card card-block card-5"></div>
-                </div>
-                <div onclick="overlay_on()"   class="col-3">
-                    <div class="card card-block card-6"></div>
-                </div>
+            <% }) %>
         </div>
     </div>
 
@@ -132,24 +125,13 @@
     <h5 class="mt-5 white_label">JOGOS RECOMENDADOS</h5>
     <div class="container-fluid styled_h_scroll">
         <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
-                <div class="col-3">
-                    <div class="card card-block"></div>
+            <% jogos.forEach((jogo, index)=> { %>
+                <div onclick="overlay_on(<%= index %>)" class="col-3">
+                    <div class="card card-block">
+                        <img height=100% width=100% src= <%= jogo.imagem %> alt="<%= jogo.imagem %>">
+                    </div>
                 </div>
-                <div class="col-3">
-                    <div class="card card-block"></div>
-                </div>
-                <div class="col-3">
-                    <div class="card card-block"></div>
-                </div>
-                <div class="col-3">
-                    <div class="card card-block"></div>
-                </div>
-                <div class="col-3">
-                    <div class="card card-block"></div>
-                </div>
-                <div class="col-3">
-                    <div class="card card-block "></div>
-                </div>
+            <% }) %>
         </div>
     </div>
 
@@ -161,60 +143,69 @@
 
     <h5 class="mt-5 white_label">TODOS OS JOGOS</h5>
     <div class="container-fluid ">
-            <div class="row flex-row mt-4 pb-4 pt-2">
-                    <div class="col-3 mb-4">
-                        <div class="card card-block"></div>
+            <div class="row flex-row-reverse mt-4 pb-4 pt-2">
+                <% jogos.forEach((jogo, index)=> { %>    
+                    <div onclick="overlay_on(<%= index %>)" class="col-3 mb-4">
+                        <div class="card card-block">
+                            <img height=100% width=100% src= <%= jogo.imagem %> alt="<%= jogo.imagem %>"> 
+                        </div>
                     </div>
-                    <div class="col-3 mb-4">
-                        <div class="card card-block"></div>
-                    </div>
-                    <div class="col-3 mb-4">
-                        <div class="card card-block"></div>
-                    </div>
-                    <div class="col-3 mb-4">
-                        <div class="card card-block"></div>
-                    </div>
-                    <div class="col-3 mb-4">
-                        <div class="card card-block"></div>
-                    </div>
-                    <div class="col-3 mb-4">
-                        <div class="card card-block "></div>
-                    </div>
+                <% }) %>    
             </div>
         </div>
     </div>
 
 
     <script>
-        function overlay_on() {
-        document.getElementById("overlay").style.display = "block",
+        function overlay_on(index) {
+        document.getElementById("overlay"+index).style.display = "block",
         overlay_gameinfo_on(),
         overlay_avaliacao_1_off(),
         overlay_avaliacao_2_off();
         }
 
-        function overlay_off() {
-        document.getElementById("overlay").style.display = "none";
+        function overlay_off(index) {
+        document.getElementById("overlay"+index).style.display = "none";
         }
 
         function overlay_gameinfo_off(){
-            document.getElementById("overlay_gameinfo").style.display = "none";
+            document.getElementsByClassName("overlay_gameinfo").style.display = "none";
         }
         function overlay_gameinfo_on(){
-            document.getElementById("overlay_gameinfo").style.display = "block";
+            document.getElementsByClassName("overlay_gameinfo").style.display = "block";
         }
         function overlay_avaliacao_1_on(){
-        document.getElementById("overlay_avaliacao_1").style.display = "block";
+        document.getElementsByClassName("overlay_avaliacao_1").style.display = "block";
         }
         function overlay_avaliacao_1_off(){
-        document.getElementById("overlay_avaliacao_1").style.display = "none";
+        document.getElementsByClassName("overlay_avaliacao_1").style.display = "none";
         }
         function overlay_avaliacao_2_on(){
-        document.getElementById("overlay_avaliacao_2").style.display = "block";
+        document.getElementsByClassName("overlay_avaliacao_2").style.display = "block";
         }
         function overlay_avaliacao_2_off(){
-        document.getElementById("overlay_avaliacao_2").style.display = "none";
+        document.getElementsByClassName("overlay_avaliacao_2").style.display = "none";
         }
+
+        // Array aleatório
+        function shuffle(array) {
+            let currentIndex = array.length,  randomIndex;
+
+            // While there remain elements to shuffle.
+            while (currentIndex != 0) {
+
+                // Pick a remaining element.
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+
+                // And swap it with the current element.
+                [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex], array[currentIndex]];
+            }
+
+            return array;
+        }
+
     </script>
     
 <%- include('../_partial/_footer.ejs') %>
