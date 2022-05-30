@@ -110,7 +110,7 @@
             <% jogos.forEach((jogo, index)=> { %>
                 <div onclick="overlay_on(<%= index %>)" class="col-3">
                     <div class="card card-block">
-                        <img height=100% width=100% src= <%= jogo.imagem %> alt="<%= jogo.imagem %>">
+                        <img class="card-img" src= <%= jogo.imagem %> alt="<%= jogo.imagem %>">
                     </div>
                 </div>
             <% }) %>
@@ -128,7 +128,7 @@
             <% jogos.forEach((jogo, index)=> { %>
                 <div onclick="overlay_on(<%= index %>)" class="col-3">
                     <div class="card card-block">
-                        <img height=100% width=100% src= <%= jogo.imagem %> alt="<%= jogo.imagem %>">
+                        <img class="card-img" height=100% width=100% src= <%= jogo.imagem %> alt="<%= jogo.imagem %>">
                     </div>
                 </div>
             <% }) %>
@@ -143,11 +143,11 @@
 
     <h5 class="mt-5 white_label">TODOS OS JOGOS</h5>
     <div class="container-fluid ">
-            <div class="row flex-row-reverse mt-4 pb-4 pt-2">
+            <div class="row flex-row mt-4 pb-4 pt-2">
                 <% jogos.forEach((jogo, index)=> { %>    
                     <div onclick="overlay_on(<%= index %>)" class="col-3 mb-4">
                         <div class="card card-block">
-                            <img height=100% width=100% src= <%= jogo.imagem %> alt="<%= jogo.imagem %>"> 
+                            <img class="card-img" height=100% width=100% src= <%= jogo.imagem %> alt="<%= jogo.imagem %>"> 
                         </div>
                     </div>
                 <% }) %>    
