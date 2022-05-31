@@ -7,6 +7,7 @@ router
     .get("/jogos", jogoController.listarJogos)
     .get("/jogos/busca", jogoController.listarJogoPorCategoria)
     .get("/jogos/:id",  jogoController.listarJogoPorId)
+    .post("/jogos/comentar/:id", jogoController.comentarJogo)
     .post("/jogos",  jogoController.cadastrarJogo)
     .put("/jogos/:id",  jogoController.atualizarJogo)
     .delete("/jogos/:id",  jogoController.excluirJogo)

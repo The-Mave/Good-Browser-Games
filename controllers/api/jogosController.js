@@ -88,6 +88,30 @@ const listarJogoPorCategoria = (req, res) => {
     });
 };
 
+const comentarJogo = (req, res) => {
+  const id = req.params.id;
+
+  jogos.findByIdAndUpdate(id, {
+    $set: {
+      comentarios: {
+        nome: req.body.comentarios.nome,
+        sobrenome: req.body.comentarios.sobrenome,
+        comentario: req.body.comentarios.comentario,
+        avaliacao: req.body.comentarios.stars
+      }
+    }
+  }, (err) => {
+    if (!err) {
+      res.status(200).send({ message: 'success' })
+    } else {
+      res.status(500).send({ message: err.message });
+    }
+  }
+
+  )
+    ;
+}
+
 export default {
   listarJogos,
   listarJogoPorId,
@@ -95,4 +119,5 @@ export default {
   atualizarJogo,
   excluirJogo,
   listarJogoPorCategoria,
+  comentarJogo
 };
