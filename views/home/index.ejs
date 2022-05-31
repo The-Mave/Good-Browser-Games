@@ -1,210 +1,253 @@
 <%- include('../_partial/_header.ejs') %>
-<%- include('../_partial/_navbar_main.ejs') %>
+    <%- include('../_partial/_navbar_main.ejs') %>
 
-    <h1>Teste Good Browser Games</h1>
+        <h1>Teste Good Browser Games</h1>
 
 
-<!-- 
+        <!-- 
 
     Overlay jogos
 
  -->
- <% jogos.forEach((jogo, index)=> { %>
-    <div onclick="" class="overlay" id="overlay<%= index %>">
-        <button style="margin-top:50px" onclick="overlay_off(<%= index %>)">X</button>
-        <div class="overlay_container">
-            
-            <div class="overlay_card" style="background-image: url('<%= jogo.imagem %>');">
-            </div>
-            <!-- <div class="overlay_card">
+        <% jogos.forEach((jogo, index)=> { %>
+            <div onclick="" class="overlay" id="overlay<%= index %>">
+                <button style="margin-top:50px" onclick="overlay_off(<%= index %>)">X</button>
+                <div class="overlay_container">
+
+                    <div class="overlay_card" style="background-image: url('<%= jogo.imagem %>');">
+                    </div>
+                    <!-- <div class="overlay_card">
                 <img height=100% width=100% src="<%= jogo.imagem %>" alt="<%= jogo.imagem %>">
             </div> -->
-            <h1 class="text-white text-center overlay_title"><%= jogo.titulo %></h1>
-            <div class="overlay_gameinfo">
-                
-                <p class="text-white font-weight-light"><%= jogo.descricao %></p>
-                <button class="btn btn-outline-success overlay_jogar" onclick="window.open(<%= jogo.url %>)">Jogar</button><!-- Não está abrindo a página do jogo -->>
-                <button class="btn btn-outline-success overlay_avaliar" onclick="overlay_gameinfo_off();overlay_avaliacao_1_on()">Avaliar</button>
-            </div>
-            <!-- <form action=""> -->
-            <div class="overlay_avaliacao_1">
-                <div class="mb-3">
-                    <textarea style="width: 40%;" id="descricao" name="descricao" rows="3"></textarea>
-                <div class="dica_descricao" class="form-text">Adicione uma descrição sobre o jogo.</div>
-                </div>
-                <button class="btn btn-outline-success " onclick="overlay_gameinfo_on();overlay_avaliacao_1_off()">Voltar</button>
-                <button class="btn btn-outline-success" onclick="overlay_avaliacao_1_off();overlay_avaliacao_2_on()">Proximo</button>
-            </div>
-            <div class="overlay_avaliacao_2">
+                    <h1 class="text-white text-center overlay_title">
+                        <%= jogo.titulo %>
+                    </h1>
+                    <div class="overlay_gameinfo">
 
-                <div style="width: 100%;">
-                    <div class="estrelas">
-                        <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-                        <label for="cm_star-1"><i class="fa-solid fa-star"></i></label>
-                        <input type="radio" id="cm_star-1" name="fb" value="1"/>
-                        <label for="cm_star-2"><i class="fa-solid fa-star"></i></label>
-                        <input type="radio" id="cm_star-2" name="fb" value="2"/>
-                        <label for="cm_star-3"><i class="fa-solid fa-star"></i></label>
-                        <input type="radio" id="cm_star-3" name="fb" value="3"/>
-                        <label for="cm_star-4"><i class="fa-solid fa-star"></i></label>
-                        <input type="radio" id="cm_star-4" name="fb" value="4"/>
-                        <label for="cm_star-5"><i class="fa-solid fa-star"></i></label>
-                        <input type="radio" id="cm_star-5" name="fb" value="5"/>
-                      </div>
-                </div>
-                <br>
-                <div class="stars">
-                    <button class="btn btn-outline-success ">Voltar</button>
-                    <button class="btn btn-outline-success">Enviar Avaliacao</button>
-                </div>
-            </div>
-            <div class="comments">
-                <div class="scrolling-wrapper-y comments row mt-4 pb-4 pt-2">
-                    <!-- comentario -->
-                    <div class="comment-avatar">
-                        <img src="https://conteudo.imguol.com.br/c/entretenimento/4f/2021/02/01/agostinho-carrara-1612204229068_v2_1x1.jpg" alt="">
-                        
+                        <p class="text-white font-weight-light">
+                            <%= jogo.descricao %>
+                        </p>
+                        <button class="btn btn-primary overlay_jogar"
+                            onclick="window.open(<%= jogo.url %>)">Jogar</button>
+                        <!-- Não está abrindo a página do jogo -->>
+                        <button class="btn btn-success overlay_avaliar"
+                            onclick="overlay_gameinfo_off();overlay_avaliacao_1_on()">Avaliar</button>
                     </div>
-                        <div class="comment-box mb-4">
-                            <div class="comment-head">
-                                <h6 class="comment-name"><a href="#">Agustinho Carrara</a></h6>
-                                <span>11/05/2022</span>
-                                <i class="fa fa-heart"></i>
+
+                    <!-- TODO: trocar url da action -->
+                    <form class="productReview" action="/jogos/submit/review">
+                        <div class="overlay_avaliacao_1">
+                            <div class="mb-3">
+                                <textarea style="width: 40%;" id="descricao" name="descricao" rows="3"></textarea>
+                                <div class="dica_descricao" class="form-text">Adicione uma descrição sobre o jogo.</div>
                             </div>
-                            <div class="comment-content">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                            <button type="button" class="btn btn-outline-primary "
+                                onclick="overlay_gameinfo_on();overlay_avaliacao_1_off()">Voltar</button>
+                            <button type="button" class="btn btn-success"
+                                onclick="overlay_avaliacao_1_off();overlay_avaliacao_2_on()">Proximo</button>
+                        </div>
+                        <div class="overlay_avaliacao_2">
+                            <div style="width: 100%;">
+                                <div class="estrelas">
+                                    <input type="radio" id="cm_star-empty" name="stars" value="" checked />
+                                    <label for="cm_star-1"><i class="fa-solid fa-star"></i></label>
+                                    <input type="radio" id="cm_star-1" name="stars" value="1" />
+                                    <label for="cm_star-2"><i class="fa-solid fa-star"></i></label>
+                                    <input type="radio" id="cm_star-2" name="stars" value="2" />
+                                    <label for="cm_star-3"><i class="fa-solid fa-star"></i></label>
+                                    <input type="radio" id="cm_star-3" name="stars" value="3" />
+                                    <label for="cm_star-4"><i class="fa-solid fa-star"></i></label>
+                                    <input type="radio" id="cm_star-4" name="stars" value="4" />
+                                    <label for="cm_star-5"><i class="fa-solid fa-star"></i></label>
+                                    <input type="radio" id="cm_star-5" name="stars" value="5" />
+                                </div>
+                            </div>
+                            <br>
+                            <div class="stars">
+                                <button type="button" class="btn btn-outline-primary " onclick="overlay_gameinfo_on();overlay_avaliacao_1_off();overlay_avaliacao_2_off()">Cancelar</button>
+                                <button type="button" class="btn btn-success js-send-review">Enviar Avaliacao</button>
                             </div>
                         </div>
-                    <!-- comentario -->
+                    </form>
 
-                    <!-- comentario -->
-                    <div class="comment-avatar">
-                        <img src="https://i1.sndcdn.com/avatars-000295697072-o66kac-t500x500.jpg" alt="">
-                    </div>
-                    <div class="comment-box mb-4">
-                        <div class="comment-head">
-                            <h6 class="comment-name"><a href="#">Arineu você não sabe nem eu</a></h6>
-                            <span>11/05/2022</span>
-                            <i class="fa fa-heart"></i>
+                    <div class="comments">
+                        <div class="scrolling-wrapper-y comments row mt-4 pb-4 pt-2">
+                            <!-- comentario -->
+                            <div class="comment-avatar">
+                                <img src="https://conteudo.imguol.com.br/c/entretenimento/4f/2021/02/01/agostinho-carrara-1612204229068_v2_1x1.jpg"
+                                    alt="">
+
+                            </div>
+                            <div class="comment-box mb-4">
+                                <div class="comment-head">
+                                    <h6 class="comment-name"><a href="#">Agustinho Carrara</a></h6>
+                                    <span>11/05/2022</span>
+                                    <i class="fa fa-heart"></i>
+                                </div>
+                                <div class="comment-content">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure
+                                    laudantium vitae, praesentium optio, sapiente distinctio illo?
+                                </div>
+                            </div>
+                            <!-- comentario -->
+
+                            <!-- comentario -->
+                            <div class="comment-avatar">
+                                <img src="https://i1.sndcdn.com/avatars-000295697072-o66kac-t500x500.jpg" alt="">
+                            </div>
+                            <div class="comment-box mb-4">
+                                <div class="comment-head">
+                                    <h6 class="comment-name"><a href="#">Arineu você não sabe nem eu</a></h6>
+                                    <span>11/05/2022</span>
+                                    <i class="fa fa-heart"></i>
+                                </div>
+                                <div class="comment-content">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure
+                                    laudantium vitae, praesentium optio, sapiente distinctio illo?
+                                </div>
+                            </div>
+                            <!-- comentario -->
                         </div>
-                        <div class="comment-content">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-                        </div>
                     </div>
-                <!-- comentario -->
+                    <!-- </form> -->
+                    <!-- COMENTARIO     -->
+
                 </div>
             </div>
-            <!-- </form> -->
-            <!-- COMENTARIO     -->
-            
-        </div>    
-    </div>
-<% }) %>
+            <% }) %>
 
- <!-- 
+                <!-- 
 
     HORIZONTAL SCROLLER JOGOS MAIS BEM AVALIADOS
 
  -->
-    <h5 class="mt-5 white_label">JOGOS MAIS BEM AVALIADOS</h5>
-    <div class="container-fluid styled_h_scroll">
-        <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
-            <% jogos.forEach((jogo, index)=> { %>
-                <div onclick="overlay_on(<%= index %>)" class="col-3">
-                    <div class="card card-block" style="background-image: url('<%= jogo.imagem %>');">
+                <h5 class="mt-5 white_label">JOGOS MAIS BEM AVALIADOS</h5>
+                <div class="container-fluid styled_h_scroll">
+                    <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
+                        <% jogos.forEach((jogo, index)=> { %>
+                            <div onclick="overlay_on(<%= index %>)" class="col-3">
+                                <div class="card card-block" style="background-image: url('<%= jogo.imagem %>');">
+                                </div>
+                            </div>
+                            <% }) %>
                     </div>
                 </div>
-            <% }) %>
-        </div>
-    </div>
 
-<!-- 
+                <!-- 
 
     HORIZONTAL SCROLLER JOGOS RECOMENDADOS
 
  -->
-    <h5 class="mt-5 white_label">JOGOS RECOMENDADOS</h5>
-    <div class="container-fluid styled_h_scroll">
-        <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
-            <% jogos.forEach((jogo, index)=> { %>
-                <div onclick="overlay_on(<%= index %>)" class="col-3">
-                    <div class="card card-block" style="background-image: url('<%= jogo.imagem %>');">
+                <h5 class="mt-5 white_label">JOGOS RECOMENDADOS</h5>
+                <div class="container-fluid styled_h_scroll">
+                    <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
+                        <% jogos.forEach((jogo, index)=> { %>
+                            <div onclick="overlay_on(<%= index %>)" class="col-3">
+                                <div class="card card-block" style="background-image: url('<%= jogo.imagem %>');">
+                                </div>
+                            </div>
+                            <% }) %>
                     </div>
                 </div>
-            <% }) %>
-        </div>
-    </div>
 
-<!-- 
+                <!-- 
 
     TODOS OS JOGOS
 
  -->
 
-    <h5 class="mt-5 white_label">TODOS OS JOGOS</h5>
-    <div class="container-fluid ">
-            <div class="row flex-row mt-4 pb-4 pt-2">
-                <% jogos.forEach((jogo, index)=> { %>    
-                    <div onclick="overlay_on(<%= index %>)" class="col-3 mb-4">
-                        <div class="card card-block" style="background-image: url('<%= jogo.imagem %>');">
-                        </div>
+                <h5 class="mt-5 white_label">TODOS OS JOGOS</h5>
+                <div class="container-fluid ">
+                    <div class="row flex-row mt-4 pb-4 pt-2">
+                        <% jogos.forEach((jogo, index)=> { %>
+                            <div onclick="overlay_on(<%= index %>)" class="col-3 mb-4">
+                                <div class="card card-block" style="background-image: url('<%= jogo.imagem %>');">
+                                </div>
+                            </div>
+                            <% }) %>
                     </div>
-                <% }) %>    
-            </div>
-        </div>
-    </div>
+                </div>
+                </div>
 
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <script>
-        function overlay_on(index) {
-        document.getElementById("overlay"+index).style.display = "block",
-        overlay_gameinfo_on(),
-        overlay_avaliacao_1_off(),
-        overlay_avaliacao_2_off();
-        }
+                <script>
+                    $(document).on('click', '.js-send-review', event => sendReview(event))
 
-        function overlay_off(index) {
-        document.getElementById("overlay"+index).style.display = "none";
-        }
+                    function sendReview(event) {
+                        event.stopPropagation()
+                        event.preventDefault()
 
-        function overlay_gameinfo_off(){
-            document.querySelector(".overlay_gameinfo").style.display = "none";
-        }
-        function overlay_gameinfo_on(){
-            document.querySelector(".overlay_gameinfo").style.display = "block";
-        }
-        function overlay_avaliacao_1_on(){
-            document.querySelector(".overlay_avaliacao_1").style.display = "block";
-        }
-        function overlay_avaliacao_1_off(){
-            document.querySelector(".overlay_avaliacao_1").style.display = "none";
-        }
-        function overlay_avaliacao_2_on(){
-            document.querySelector(".overlay_avaliacao_2").style.display = "block";
-        }
-        function overlay_avaliacao_2_off(){
-            document.querySelector(".overlay_avaliacao_2").style.display = "none";
-        }
+                        let target = event.currentTarget
+                        let form = $(target.closest('form'))
+                        let formData = form.serializeArray()
 
-        // Array aleatório
-        function shuffle(array) {
-            let currentIndex = array.length,  randomIndex;
+                        $.ajax({
+                            url: form.attr('action'),
+                            beforeSend: function () {
+                                console.log('loading')
+                            }
+                        })
+                            .done(function (data) {
+                                console.log('success', data)
+                            }).fail(function(error) {
+                                console.log('error: ', error)
+                            }).always(function(){
+                                console.log('loading done');
+                            });
 
-            // While there remain elements to shuffle.
-            while (currentIndex != 0) {
+                    }
 
-                // Pick a remaining element.
-                randomIndex = Math.floor(Math.random() * currentIndex);
-                currentIndex--;
+                    function overlay_on(index) {
+                        document.getElementById("overlay" + index).style.display = "block",
+                            overlay_gameinfo_on(),
+                            overlay_avaliacao_1_off(),
+                            overlay_avaliacao_2_off();
+                    }
 
-                // And swap it with the current element.
-                [array[currentIndex], array[randomIndex]] = [
-                array[randomIndex], array[currentIndex]];
-            }
+                    function overlay_off(index) {
+                        document.getElementById("overlay" + index).style.display = "none";
+                    }
 
-            return array;
-        }
+                    function overlay_gameinfo_off() {
+                        document.querySelector(".overlay_gameinfo").style.display = "none";
+                    }
+                    function overlay_gameinfo_on() {
+                        document.querySelector(".overlay_gameinfo").style.display = "block";
+                    }
+                    function overlay_avaliacao_1_on() {
+                        document.querySelector(".overlay_avaliacao_1").style.display = "block";
+                    }
+                    function overlay_avaliacao_1_off() {
+                        document.querySelector(".overlay_avaliacao_1").style.display = "none";
+                    }
+                    function overlay_avaliacao_2_on() {
+                        document.querySelector(".overlay_avaliacao_2").style.display = "block";
+                    }
+                    function overlay_avaliacao_2_off() {
+                        document.querySelector(".overlay_avaliacao_2").style.display = "none";
+                    }
 
-    </script>
-    
-<%- include('../_partial/_footer.ejs') %>
+                    // Array aleatório
+                    function shuffle(array) {
+                        let currentIndex = array.length, randomIndex;
+
+                        // While there remain elements to shuffle.
+                        while (currentIndex != 0) {
+
+                            // Pick a remaining element.
+                            randomIndex = Math.floor(Math.random() * currentIndex);
+                            currentIndex--;
+
+                            // And swap it with the current element.
+                            [array[currentIndex], array[randomIndex]] = [
+                                array[randomIndex], array[currentIndex]];
+                        }
+
+                        return array;
+                    }
+
+                </script>
+
+                <%- include('../_partial/_footer.ejs') %>

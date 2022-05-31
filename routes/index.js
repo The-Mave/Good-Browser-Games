@@ -7,10 +7,7 @@ import admin from "./web/adminRoutes.js"
 import home from "./web/homeRoutes.js"
 
 
-    const routes = (app) => {
-        app.route('/').get((req, res) =>{
-            res.status(200).render('home',{});
-        })
+const routes = (app) => {
 
     app.use(
         express.json(),

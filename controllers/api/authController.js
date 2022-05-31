@@ -30,9 +30,12 @@ const perfilUser = async (req, res) => {
 
   if (result){
     const user = await User.findById(id, "-passwordHash");
+    console.log('\x1b[32m\x1b[1m', '[X] Autenticação validada para rota privada' ,'\x1b[0m');
 
   if (!user) {
+    console.log('\x1b[41m\x1b[1m', '[X] Autenticação NAO validada para rota privada' ,'\x1b[0m');
     return res.status(404).json({ msg: "Usuário não encontrado!" });
+
   }
 
   res.status(200).json({ user });
@@ -41,14 +44,14 @@ const perfilUser = async (req, res) => {
 
 const checkToken = (req, res) => {
 
-  const authHeader = req.headers["authorization"];
+  const authcookie = req.cookies.authcookie
 
   console.log("----------------------------------")
   console.log("------------CheckToken------------")
   console.log("----------------------------------")
-  console.log("authHeader: " + authHeader)
+  console.log("authcookie: " + authcookie)
 
-  const token = authHeader && authHeader.split(" ")[1];
+  const token = authcookie
 
   if (!token) return res.status(401).json({ msg: "Acesso negado!" });
   
@@ -56,10 +59,15 @@ const checkToken = (req, res) => {
     jwt.verify(token, secret);
     console.log("token: " + token)
     console.log("secret: " + secret)
+    console.log('\x1b[32m\x1b[1m', '[X] Autenticação validada' ,'\x1b[0m');
+    const decodedToken = jwt.decode(token);
+    console.log('decodedToken:',decodedToken);
     return true
+    
 
   } catch (err) {
     console.log(err)
+    console.log('\x1b[32m', 'Verificação de token Falhou' ,'\x1b[0m');
     res.status(400).json({ msg: "O Token é inválido!" });
   }
 }
@@ -100,17 +108,30 @@ const loginUser = async(req,res) => {
       },
       secret
     );
-    res.setHeader('authorization', 'Bearer ' + token)
-    res.status(200).json({ msg: "Autenticação realizada com sucesso!", token });
+  
+    res.cookie('authcookie',token) 
     
+    //   // limpar os cookies para logout
+
+    // res.status(200).json({ msg: "Autenticação realizada com sucesso!", token });
+    res.redirect('/');
+    console.log('\x1b[32m\x1b[1m', '[X] Login realizado' ,'\x1b[0m');
     // VERIFICACAO DO TOKEN
+    
 
   } catch (error) {
     res.status(500).json({ msg: error });
+    console.log('\x1b[32m', 'Login Falhou' ,'\x1b[0m');
   }
 }
+const logout = async(req,res) =>{
+  res.clearCookie('authcookie');
+  // REDIRECT OT HOME
+  res.redirect('/');
+}
 
-const  registrarUser = async(req,res) => {
+
+const registrarUser = async(req,res) => {
   const {nome, sobrenome, email, senha, confirmarsenha, cpf, nascimento} = req.body
   const administrador = false
 
@@ -180,5 +201,6 @@ export default {
   registrar,
   login,
   loginUser,
-  perfilUser
+  perfilUser,
+  logout
 };

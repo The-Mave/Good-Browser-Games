@@ -8,6 +8,7 @@ import methodOverride from 'method-override'
 import dotenv from 'dotenv'
 import bcrypt from 'bcrypt'
 import jsonwebtoken from 'jsonwebtoken'
+import cookieParser from "cookie-parser"
 
 dotenv.config()
 const cryptography = bcrypt
@@ -24,6 +25,7 @@ app.use(express.static('content'));
 app.use(methodOverride('_method'));
 app.use(jsonParser);
 app.use(urlencodedParser)
+app.use(cookieParser())
 
 app.set("port", process.env.PORT || 3000);
 
