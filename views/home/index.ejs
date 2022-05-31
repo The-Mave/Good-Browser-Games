@@ -14,9 +14,11 @@
         <button style="margin-top:50px" onclick="overlay_off(<%= index %>)">X</button>
         <div class="overlay_container">
             
-            <div class="overlay_card">
-                <img height=100% width=100% src="<%= jogo.imagem %>" alt="<%= jogo.imagem %>">
+            <div class="overlay_card" style="background-image: url('<%= jogo.imagem %>');">
             </div>
+            <!-- <div class="overlay_card">
+                <img height=100% width=100% src="<%= jogo.imagem %>" alt="<%= jogo.imagem %>">
+            </div> -->
             <h1 class="text-white text-center overlay_title"><%= jogo.titulo %></h1>
             <div class="overlay_gameinfo">
                 
@@ -109,8 +111,7 @@
         <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
             <% jogos.forEach((jogo, index)=> { %>
                 <div onclick="overlay_on(<%= index %>)" class="col-3">
-                    <div class="card card-block">
-                        <img class="card-img" src= <%= jogo.imagem %> alt="<%= jogo.imagem %>">
+                    <div class="card card-block" style="background-image: url('<%= jogo.imagem %>');">
                     </div>
                 </div>
             <% }) %>
@@ -127,8 +128,7 @@
         <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
             <% jogos.forEach((jogo, index)=> { %>
                 <div onclick="overlay_on(<%= index %>)" class="col-3">
-                    <div class="card card-block">
-                        <img class="card-img" height=100% width=100% src= <%= jogo.imagem %> alt="<%= jogo.imagem %>">
+                    <div class="card card-block" style="background-image: url('<%= jogo.imagem %>');">
                     </div>
                 </div>
             <% }) %>
@@ -146,8 +146,7 @@
             <div class="row flex-row mt-4 pb-4 pt-2">
                 <% jogos.forEach((jogo, index)=> { %>    
                     <div onclick="overlay_on(<%= index %>)" class="col-3 mb-4">
-                        <div class="card card-block">
-                            <img class="card-img" height=100% width=100% src= <%= jogo.imagem %> alt="<%= jogo.imagem %>"> 
+                        <div class="card card-block" style="background-image: url('<%= jogo.imagem %>');">
                         </div>
                     </div>
                 <% }) %>    
@@ -169,22 +168,22 @@
         }
 
         function overlay_gameinfo_off(){
-            document.getElementsByClassName("overlay_gameinfo").style.display = "none";
+            document.querySelector(".overlay_gameinfo").style.display = "none";
         }
         function overlay_gameinfo_on(){
-            document.getElementsByClassName("overlay_gameinfo").style.display = "block";
+            document.querySelector(".overlay_gameinfo").style.display = "block";
         }
         function overlay_avaliacao_1_on(){
-        document.getElementsByClassName("overlay_avaliacao_1").style.display = "block";
+            document.querySelector(".overlay_avaliacao_1").style.display = "block";
         }
         function overlay_avaliacao_1_off(){
-        document.getElementsByClassName("overlay_avaliacao_1").style.display = "none";
+            document.querySelector(".overlay_avaliacao_1").style.display = "none";
         }
         function overlay_avaliacao_2_on(){
-        document.getElementsByClassName("overlay_avaliacao_2").style.display = "block";
+            document.querySelector(".overlay_avaliacao_2").style.display = "block";
         }
         function overlay_avaliacao_2_off(){
-        document.getElementsByClassName("overlay_avaliacao_2").style.display = "none";
+            document.querySelector(".overlay_avaliacao_2").style.display = "none";
         }
 
         // Array aleatório
