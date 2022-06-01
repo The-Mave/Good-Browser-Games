@@ -2,7 +2,7 @@ users = []
 
 const index = (req,res) => {
     console.log("Render de signup funcionou!")
-    res.render("Home/signup");
+    res.render("home/signup");
 }
 
 const signup = (req,res) => {

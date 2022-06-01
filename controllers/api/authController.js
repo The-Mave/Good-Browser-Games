@@ -10,13 +10,13 @@ const secret = 'palavracabalistica'
 
 const login = (req,res) => {
   console.log("Render de index funcionou!")
-  res.render("Home/login");
+  res.render("home/login");
 };
 
 const registrar = (req,res) => {
   console.log("regitsrar")
   console.log("Render de index funcionou!")
-  res.render("Home/signup");
+  res.render("home/signup");
 };
 
 
