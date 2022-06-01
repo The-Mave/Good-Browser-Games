@@ -35,10 +35,10 @@
                     </div>
 
                     <!-- TODO: trocar url da action -->
-                    <form class="productReview" action="/jogos/submit/review">
+                    <form class="productReview" action="/jogos/comentar/<%= jogo._id %>">
                         <div class="overlay_avaliacao_1">
                             <div class="mb-3">
-                                <textarea style="width: 40%;" id="descricao" name="descricao" rows="3"></textarea>
+                                <textarea style="width: 40%;" id="descricao" name="descricao" rows="3" name="comentario"></textarea>
                                 <div class="dica_descricao" class="form-text">Adicione uma descrição sobre o jogo.</div>
                             </div>
                             <button type="button" class="btn btn-outline-primary "
