@@ -1,6 +1,5 @@
 <%- include('../_partial/_header.ejs') %>
     <%- include('../_partial/_navbar_main.ejs') %>
-
         <h1>Teste Good Browser Games</h1>
 
 
@@ -27,9 +26,8 @@
                         <p class="text-white font-weight-light">
                             <%= jogo.descricao %>
                         </p>
-                        <button class="btn btn-primary overlay_jogar"
-                            onclick="window.open(<%= jogo.url %>)">Jogar</button>
-                        <!-- Não está abrindo a página do jogo -->>
+                        <a class="btn btn-primary overlay_jogar" href="<%= jogo.url %>">Jogar</a>
+                        
                         <button class="btn btn-success overlay_avaliar"
                             onclick="overlay_gameinfo_off();overlay_avaliacao_1_on()">Avaliar</button>
                     </div>
@@ -139,8 +137,10 @@
 
  -->
                 <h5 class="mt-5 white_label">JOGOS RECOMENDADOS</h5>
+
                 <div class="container-fluid styled_h_scroll">
                     <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
+                    
                         <% jogos.forEach((jogo, index)=> { %>
                             <div onclick="overlay_on(<%= index %>)" class="col-3">
                                 <div class="card card-block" style="background-image: url('<%= jogo.imagem %>');">
@@ -232,7 +232,7 @@
                     // Array aleatório
                     function shuffle(array) {
                         let currentIndex = array.length, randomIndex;
-
+                        console.log(currentIndex);
                         // While there remain elements to shuffle.
                         while (currentIndex != 0) {
 
