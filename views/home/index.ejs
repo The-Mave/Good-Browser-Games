@@ -122,7 +122,7 @@
                 <h5 class="mt-5 white_label">JOGOS MAIS BEM AVALIADOS</h5>
                 <div class="container-fluid styled_h_scroll">
                     <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
-                        <% jogos.forEach((jogo, index)=> { %>
+                        <% jogosOrdenados.forEach((jogo, index)=> { %>
                             <div onclick="overlay_on(<%= index %>)" class="col-3">
                                 <div class="card card-block" style="background-image: url('<%= jogo.imagem %>');">
                                 </div>
@@ -141,7 +141,7 @@
                 <div class="container-fluid styled_h_scroll">
                     <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
                     
-                        <% jogos.forEach((jogo, index)=> { %>
+                        <% jogosAleatorios.forEach((jogo, index)=> { %>
                             <div onclick="overlay_on(<%= index %>)" class="col-3">
                                 <div class="card card-block" style="background-image: url('<%= jogo.imagem %>');">
                                 </div>
@@ -227,25 +227,6 @@
                     }
                     function overlay_avaliacao_2_off() {
                         document.querySelector(".overlay_avaliacao_2").style.display = "none";
-                    }
-
-                    // Array aleatório
-                    function shuffle(array) {
-                        let currentIndex = array.length, randomIndex;
-                        console.log(currentIndex);
-                        // While there remain elements to shuffle.
-                        while (currentIndex != 0) {
-
-                            // Pick a remaining element.
-                            randomIndex = Math.floor(Math.random() * currentIndex);
-                            currentIndex--;
-
-                            // And swap it with the current element.
-                            [array[currentIndex], array[randomIndex]] = [
-                                array[randomIndex], array[currentIndex]];
-                        }
-
-                        return array;
                     }
 
                 </script>

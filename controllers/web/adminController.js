@@ -3,9 +3,29 @@ import categorias from "../../models/categoria.js";
 import usuarios from "../../models/usuario.js";
 
 const dashboard = (req,res) => {
-    console.log("Admin de index funcionou!")
-    res.render("admin/index");
-}
+  jogos.find()
+  .populate('categoria')
+  .then((result1) => {
+    usuarios.find().then((result2) => {
+      categorias.find().then((result3) => {
+
+        let jogosOrdenadosPorAvaliacao = ordenaPorAvaliacao(result1);
+        let jogosOrdenadosPorQuantidadeAvaliacao = ordenaPorQuantidadeAvaliacao(result1);
+        let usuariosOrdenadosPorQuantidadeAvaliacao = ordenaPorQuantidadeAvaliacao(result2);
+        let categoriasOrdenadasPorQuantidadeAvaliacao = ordenaPorQuantidadeAvaliacao(result3);
+        
+
+
+    res.render("admin/index", {
+      jogos1: jogosOrdenadosPorQuantidadeAvaliacao,
+      jogos2: jogosOrdenadosPorAvaliacao,
+      usuarios: usuariosOrdenadosPorQuantidadeAvaliacao,
+      categorias: categoriasOrdenadasPorQuantidadeAvaliacao
+    });
+  });
+})
+  })
+};
 
 // READ
 
@@ -89,6 +109,35 @@ const adminCriarJogos = (req,res) => {
 const adminCriarCategorias = (req,res) => {
 res.render("admin/categorias_create");
 }
+
+
+// FUNÇÕES PARA ORDENAÇÃO DOS JOGOS SEGUNDO OS CRITÉRIOS DO RELATÓRIO SOLICITADOS PELO PROFESSOR
+// Array maior número de avaliações
+
+function ordenaPorQuantidadeAvaliacao(array) {
+  const novoArray = [...array];
+  novoArray.sort((a, b) => {
+    return a.qtd_avaliacoes - b.qtd_avaliacoes;
+});
+  novoArray.reverse();
+  const novoArray5 = novoArray.slice(0, 5)
+  return novoArray5;
+}
+
+// Array mais bem avaliados
+
+function ordenaPorAvaliacao(array) {
+  const novoArray = [...array];
+  novoArray.sort((a, b) => {
+    return a.avaliacao - b.avaliacao;
+});
+  novoArray.reverse();
+  const novoArray5 = novoArray.slice(0, 5)
+  return novoArray5;
+}
+
+
+
 export default {
 dashboard,
 adminObterJogos,

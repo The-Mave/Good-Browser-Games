@@ -1,5 +1,4 @@
 import jogos from "../../models/jogo.js";
-import categorias from "../../models/categoria.js";
 
 const listarJogos = (req, res) => {
   jogos
@@ -111,6 +110,8 @@ const comentarJogo = (req, res) => {
   )
     ;
 }
+
+
 
 export default {
   listarJogos,

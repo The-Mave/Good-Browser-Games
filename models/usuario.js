@@ -11,6 +11,7 @@ const usuarioSchema = new mongoose.Schema({
   imagem: { type: String, required: false },
   jogos: [{ type: mongoose.Schema.Types.ObjectId, ref: 'jogos'}],
   administrador: { type: Boolean, required: true },
+  qtd_avaliacoes: { type: Number },
 },
 {
     versionKey: false

@@ -85,6 +85,8 @@ const listarUsuarioPorCpf = (req, res) => {
   });
 };
 
+
+
 export default {
   listarUsuarios,
   listarUsuarioPorId,
