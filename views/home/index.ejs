@@ -15,9 +15,6 @@
 
                     <div class="overlay_card" style="background-image: url('<%= jogo.imagem %>');">
                     </div>
-                    <!-- <div class="overlay_card">
-                <img height=100% width=100% src="<%= jogo.imagem %>" alt="<%= jogo.imagem %>">
-            </div> -->
                     <h1 class="text-white text-center overlay_title">
                         <%= jogo.titulo %>
                     </h1>
@@ -42,7 +39,7 @@
                             <button type="button" class="btn btn-outline-primary "
                                 onclick="overlay_gameinfo_on();overlay_avaliacao_1_off()">Voltar</button>
                             <button type="button" class="btn btn-success"
-                                onclick="overlay_avaliacao_1_off();overlay_avaliacao_2_on()">Proximo</button>
+                                onclick="avaliacaoEstrelas()">Proximo</button>
                         </div>
                         <div class="overlay_avaliacao_2">
                             <div style="width: 100%;">
@@ -63,7 +60,7 @@
                             <br>
                             <div class="stars">
                                 <button type="button" class="btn btn-outline-primary " onclick="overlay_gameinfo_on();overlay_avaliacao_1_off();overlay_avaliacao_2_off()">Cancelar</button>
-                                <button type="button" class="btn btn-success js-send-review">Enviar Avaliacao</button>
+                                <button type="button" onclick="inicializarOverlay()" class="btn btn-success js-send-review">Enviar Avaliacao</button>
                             </div>
                         </div>
                     </form>
@@ -210,23 +207,28 @@
                         document.getElementById("overlay" + index).style.display = "none";
                     }
 
-                    function overlay_gameinfo_off() {
-                        document.querySelector(".overlay_gameinfo").style.display = "none";
+
+
+
+                    $(document).ready(function() {
+                        $('.overlay_avaliacao_1').hide();
+                        $('.overlay_avaliacao_2').hide();
+                    });
+
+                    $('.overlay_avaliar').click( function () {
+                    $('.overlay_avaliacao_1').show();
+                    $('.overlay_gameinfo').hide();
+                    });
+
+                    function avaliacaoEstrelas(){  
+                    $('.overlay_avaliacao_1').hide();
+                    $('.overlay_avaliacao_2').show();
                     }
-                    function overlay_gameinfo_on() {
-                        document.querySelector(".overlay_gameinfo").style.display = "block";
-                    }
-                    function overlay_avaliacao_1_on() {
-                        document.querySelector(".overlay_avaliacao_1").style.display = "block";
-                    }
-                    function overlay_avaliacao_1_off() {
-                        document.querySelector(".overlay_avaliacao_1").style.display = "none";
-                    }
-                    function overlay_avaliacao_2_on() {
-                        document.querySelector(".overlay_avaliacao_2").style.display = "block";
-                    }
-                    function overlay_avaliacao_2_off() {
-                        document.querySelector(".overlay_avaliacao_2").style.display = "none";
+
+                    function inicializarOverlay(){
+                    $('.overlay_avaliacao_1').hide();
+                    $('.overlay_avaliacao_2').hide();
+                    $('.overlay_gameinfo').show();
                     }
 
                 </script>
