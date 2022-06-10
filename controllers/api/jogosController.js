@@ -1,4 +1,5 @@
 import jogos from "../../models/jogo.js";
+import comentarios from "../../models/comentario.js";
 
 const listarJogos = (req, res) => {
   jogos
@@ -30,11 +31,9 @@ const cadastrarJogo = (req, res) => {
   let jogo = new jogos({
     titulo: req.body.titulo,
     categoria: req.body.categoria,
-    avaliacao: 0,
     descricao: req.body.descricao,
-    qtd_avaliacoes: 0,
     url: req.body.url,
-    imagem: req.body.imagem,
+    imagem: req.body.imagem
   });
 
   jogo.save((err) => {
@@ -87,31 +86,6 @@ const listarJogoPorCategoria = (req, res) => {
     });
 };
 
-const comentarJogo = (req, res) => {
-  const id = req.params.id;
-
-  jogos.findByIdAndUpdate(id, {
-    $set: {
-      comentarios: {
-        nome: req.body.comentarios.nome,
-        sobrenome: req.body.comentarios.sobrenome,
-        comentario: req.body.comentarios.comentario,
-        avaliacao: req.body.comentarios.stars
-      }
-    }
-  }, (err) => {
-    if (!err) {
-      res.status(200).send({ message: 'success' })
-    } else {
-      res.status(500).send({ message: err.message });
-    }
-  }
-
-  )
-    ;
-}
-
-
 
 export default {
   listarJogos,
@@ -119,6 +93,5 @@ export default {
   cadastrarJogo,
   atualizarJogo,
   excluirJogo,
-  listarJogoPorCategoria,
-  comentarJogo
+  listarJogoPorCategoria
 };

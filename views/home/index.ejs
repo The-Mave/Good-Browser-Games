@@ -30,10 +30,12 @@
                     </div>
 
                     <!-- TODO: trocar url da action -->
-                    <form class="productReview" action="/jogos/comentar/<%= jogo._id %>">
+                    <form method="post" action="/comentarios">
+                        <input type="text" class="d-none" name="usuario" value="<%= user.id %>">
+                        <input type="text" class="d-none" name="jogo" value="<%= jogo._id %>">
                         <div class="overlay_avaliacao_1">
                             <div class="mb-3">
-                                <textarea style="width: 40%;" id="descricao" name="descricao" rows="3" name="comentario"></textarea>
+                                <textarea style="width: 40%;" id="descricao" name="descricao" rows="3"></textarea>
                                 <div class="dica_descricao" class="form-text">Adicione uma descrição sobre o jogo.</div>
                             </div>
                             <button type="button" class="btn btn-outline-primary "
@@ -44,64 +46,46 @@
                         <div class="overlay_avaliacao_2">
                             <div style="width: 100%;">
                                 <div class="estrelas">
-                                    <input type="radio" id="cm_star-empty" name="stars" value="" checked />
+                                    <input type="radio" id="cm_star-empty" name="avaliacao" value=0 checked />
                                     <label for="cm_star-1"><i class="fa-solid fa-star"></i></label>
-                                    <input type="radio" id="cm_star-1" name="stars" value="1" />
+                                    <input type="radio" id="cm_star-1" name="avaliacao" value=1 />
                                     <label for="cm_star-2"><i class="fa-solid fa-star"></i></label>
-                                    <input type="radio" id="cm_star-2" name="stars" value="2" />
+                                    <input type="radio" id="cm_star-2" name="avaliacao" value=2 />
                                     <label for="cm_star-3"><i class="fa-solid fa-star"></i></label>
-                                    <input type="radio" id="cm_star-3" name="stars" value="3" />
+                                    <input type="radio" id="cm_star-3" name="avaliacao" value=3 />
                                     <label for="cm_star-4"><i class="fa-solid fa-star"></i></label>
-                                    <input type="radio" id="cm_star-4" name="stars" value="4" />
+                                    <input type="radio" id="cm_star-4" name="avaliacao" value=4 />
                                     <label for="cm_star-5"><i class="fa-solid fa-star"></i></label>
-                                    <input type="radio" id="cm_star-5" name="stars" value="5" />
+                                    <input type="radio" id="cm_star-5" name="avaliacao" value=5 />
                                 </div>
                             </div>
                             <br>
                             <div class="stars">
                                 <button type="button" class="btn btn-outline-primary " onclick="overlay_gameinfo_on();overlay_avaliacao_1_off();overlay_avaliacao_2_off()">Cancelar</button>
-                                <button type="button" onclick="inicializarOverlay()" class="btn btn-success js-send-review">Enviar Avaliacao</button>
+                                <button type="submit" class="btn btn-success">Enviar Avaliacao</button>
                             </div>
                         </div>
                     </form>
 
                     <div class="comments">
                         <div class="scrolling-wrapper-y comments row mt-4 pb-4 pt-2">
-                            <!-- comentario -->
-                            <div class="comment-avatar">
-                                <img src="https://conteudo.imguol.com.br/c/entretenimento/4f/2021/02/01/agostinho-carrara-1612204229068_v2_1x1.jpg"
-                                    alt="">
-
-                            </div>
-                            <div class="comment-box mb-4">
-                                <div class="comment-head">
-                                    <h6 class="comment-name"><a href="#">Agustinho Carrara</a></h6>
-                                    <span>11/05/2022</span>
-                                    <i class="fa fa-heart"></i>
-                                </div>
-                                <div class="comment-content">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure
-                                    laudantium vitae, praesentium optio, sapiente distinctio illo?
-                                </div>
-                            </div>
-                            <!-- comentario -->
-
-                            <!-- comentario -->
-                            <div class="comment-avatar">
-                                <img src="https://i1.sndcdn.com/avatars-000295697072-o66kac-t500x500.jpg" alt="">
-                            </div>
-                            <div class="comment-box mb-4">
-                                <div class="comment-head">
-                                    <h6 class="comment-name"><a href="#">Arineu você não sabe nem eu</a></h6>
-                                    <span>11/05/2022</span>
-                                    <i class="fa fa-heart"></i>
-                                </div>
-                                <div class="comment-content">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure
-                                    laudantium vitae, praesentium optio, sapiente distinctio illo?
-                                </div>
-                            </div>
-                            <!-- comentario -->
+                            <% comentarios.forEach((comentario)=> { %>
+                                <% if(String(comentario.jogo._id) == String(jogo._id)){ %>
+                                    <div class="comment-avatar">
+                                        <img src="<%= comentario.usuario.imagem %>"
+                                            alt="">
+                                    </div>
+                                    <div class="comment-box mb-4">
+                                        <div class="comment-head">
+                                            <h6 class="comment-name"><a href="#"><%= comentario.usuario.nome %></a></h6>
+                                            <i class="fa fa-heart"></i>
+                                        </div>
+                                        <div class="comment-content">
+                                            <%= comentario.descricao %>
+                                        </div>
+                                    </div>
+                                <% } %>
+                            <% }) %>
                         </div>
                     </div>
                     <!-- </form> -->

@@ -1,26 +1,32 @@
 import jogos from "../../models/jogo.js";
-import categorias from "../../models/categoria.js";
+import comentarios from "../../models/comentario.js";
 import jsonwebtoken from "jsonwebtoken";
 const jwt = jsonwebtoken;
 
 const index = (req, res) => {
     jogos.find()
     .populate('categoria')
-    .then((result) => {
-      let decodedToken = jwt.decode(req.cookies.authcookie);
+    .then((result1) => {
+      comentarios.find()
+      .populate('usuario')
+      .then((result2) => {
 
-      let aleatorio = shuffle(result);
-      let ordenado = ordenaPorAvaliacao(result);
+        let decodedToken = jwt.decode(req.cookies.authcookie);
 
-      res.render("home/index", {
-        jogos: result,
-        jogosAleatorios: aleatorio,
-        jogosOrdenados: ordenado,
-        isAuth: !!req.cookies.authcookie,
-        user: {
-          ...decodedToken
-        }
-      });
+        let aleatorio = shuffle(result1);
+        let ordenado = ordenaPorAvaliacao(result1);
+
+        res.render("home/index", {
+          jogos: result1,
+          jogosAleatorios: aleatorio,
+          jogosOrdenados: ordenado,
+          isAuth: !!req.cookies.authcookie,
+          user: {
+            ...decodedToken
+          },
+          comentarios: result2
+        });
+      })
     });
   };
 
