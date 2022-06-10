@@ -14,7 +14,7 @@ const index = (req, res) => {
         let decodedToken = jwt.decode(req.cookies.authcookie);
 
         let aleatorio = shuffle(result1);
-        let ordenado = ordenaPorAvaliacao(result1);
+        let ordenado = ordenaJogoPorAvaliacao(result1, result2);
 
         res.render("home/index", {
           jogos: result1,
@@ -57,13 +57,35 @@ function shuffle(array) {
 
 // Array mais bem avaliados
 
-function ordenaPorAvaliacao(array) {
-  const novoArray = [...array];
+function ordenaJogoPorAvaliacao(arrayJogos, arrayComentarios) {
+  const novoArray = [...arrayJogos];
+  let qtd_comentarios = 0;
+  let nota = 0;
+  let media = 0;
+  const arrayQuantidades = [];
+  novoArray.forEach(jogo => {
+    arrayComentarios.forEach(comentario=> {
+      if(String(comentario.jogo) == String(jogo._id)){
+        qtd_comentarios += 1;
+        nota += comentario.avaliacao;
+      }
+    })
+    media = nota/qtd_comentarios
+    arrayQuantidades.push(media)
+    qtd_comentarios = 0;
+    nota = 0;
+    media = 0;
+  });
+
+  arrayQuantidades.forEach((media, index)=>{
+    novoArray[index].avaliacao = media
+  })
   novoArray.sort((a, b) => {
     return a.avaliacao - b.avaliacao;
 });
   novoArray.reverse();
-  return novoArray;
+  const novoArray5 = novoArray.slice(0, 5)
+  return novoArray5;
 }
 
 export default {
