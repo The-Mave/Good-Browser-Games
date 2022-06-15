@@ -18,9 +18,9 @@
 
                 <% if(!!isAuth){ %>
                     
-                    olá usuario <%-user.id %>
-<br>
-                    <a href="/logout">Deslogar</a>
+                <form method="get" action="/logout">
+                    <button class="btn btn-outline-success " type="submit">Logout</button>
+                </form>
 
                 <% } else { %>
             
