@@ -24,9 +24,17 @@
                             <%= jogo.descricao %>
                         </p>
                         <a class="btn btn-primary overlay_jogar" href="<%= jogo.url %>">Jogar</a>
-                        
-                        <button class="btn btn-success overlay_avaliar"
-                            onclick="overlay_gameinfo_off();overlay_avaliacao_1_on()">Avaliar</button>
+
+                        <% if(!!isAuth){ %>
+                    
+                        <button class="btn btn-success overlay_avaliar" onclick="overlay_gameinfo_off();overlay_avaliacao_1_on()">Avaliar</button>
+        
+                        <% } else { %>
+                    
+                         <button class="btn btn-success overlay_avaliar" onclick="overlay_gameinfo_off();overlay_avaliacao_1_on()" disabled>Avaliar</button>
+        
+                        <% } %>
+
                     </div>
 
                     <!-- TODO: trocar url da action -->
@@ -36,10 +44,10 @@
                         <div class="overlay_avaliacao_1">
                             <div class="mb-3">
                                 <textarea style="width: 40%;" id="descricao" name="descricao" rows="3"></textarea>
-                                <div class="dica_descricao" class="form-text">Adicione uma descrição sobre o jogo.</div>
+                                <div class="dica_descricao text-white" class="form-text">Adicione uma descrição sobre o jogo.</div>
                             </div>
                             <button type="button" class="btn btn-outline-primary "
-                                onclick="overlay_gameinfo_on();overlay_avaliacao_1_off()">Voltar</button>
+                                onclick="inicializarOverlay()">Voltar</button>
                             <button type="button" class="btn btn-success"
                                 onclick="avaliacaoEstrelas()">Proximo</button>
                         </div>
@@ -61,7 +69,7 @@
                             </div>
                             <br>
                             <div class="stars">
-                                <button type="button" class="btn btn-outline-primary " onclick="overlay_gameinfo_on();overlay_avaliacao_1_off();overlay_avaliacao_2_off()">Cancelar</button>
+                                <button type="button" class="btn btn-outline-primary " onclick="inicializarOverlay()">Cancelar</button>
                                 <button type="submit" class="btn btn-success">Enviar Avaliacao</button>
                             </div>
                         </div>
