@@ -23,7 +23,7 @@
   "homepage": "https://github.com/The-Mave/Good-Browser-Games#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
-    "body-parser": "^1.19.2",
+    "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.1",
     "ejs": "^3.1.6",
